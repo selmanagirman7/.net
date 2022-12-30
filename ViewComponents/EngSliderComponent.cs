@@ -1,19 +1,20 @@
 ﻿using Business.Abstract;
-using Business.Concrete;
 using Microsoft.AspNetCore.Mvc;
 
 namespace WebUI.ViewComponents
 {
-    public class SliderComponent : ViewComponent
+    public class EngSliderComponent:ViewComponent
     {
         ISliderService _sliderService;
-        public SliderComponent(ISliderService sliderService)
+
+        public EngSliderComponent(ISliderService sliderService)
         {
             _sliderService = sliderService;
         }
 
         public IViewComponentResult Invoke()
         {
+            var result = _sliderService.GetAll();
             return View();
         }
     }
