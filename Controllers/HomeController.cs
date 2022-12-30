@@ -1,99 +1,92 @@
-﻿using DataAccess;
+﻿using Business.Abstract;
 using Entity;
-using Korzh.EasyQuery.Linq;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
 using WebUI.Models;
-using X.PagedList;
+using DataAccess;
 
 namespace WebUI.Controllers
 {
-    [AllowAnonymous]
     public class HomeController : Controller
     {
+         DataAccess.AppContext context = new  DataAccess.AppContext();
         private readonly ILogger<HomeController> _logger;
-        public HomeController(ILogger<HomeController> logger)
+        IProductService _productService;
+
+
+        public HomeController(ILogger<HomeController> logger, IProductService productService)
         {
             _logger = logger;
+            _productService = productService;
+
         }
-        Context context = new Context();
-
-        public IActionResult Index(/*string SearchText=" "*/)
-        {
-
-           // var results = context.VegaProducts
-           //.Where(x => x.Name.Contains(SearchText) || x.Stok.Contains(SearchText))
-           //    .ToList();
-           // //List<Vega> vega;
-           // //if (terms != "" && terms != null)
-           // //{
-
-           // //    vega = context.VegaProducts
-           // //        .Where(x => x.Name.Contains(terms) || x.Stok.Contains(terms))
-           // //        .ToList();
-           // //}
-           // //else
-           // //{
-           // //    vega = context.VegaProducts.ToList();
-           // //}
-
-            return View();
-        }
-
-   
-
-
 
         [HttpGet]
-        public  IActionResult Search(string Search, int syf = 1)
+        public IActionResult Search(string Search)
         {
-
-            List<Vega> vega;
-            if (Search != "" && Search != null)
+            List<Product> products;
+            if (Search != "" && Search !=null)
             {
-                vega = context.VegaProducts
-                    .Where(x => x.Name.Contains(Search.ToUpper()) || x.CategoryName.Contains(Search.ToUpper()) || x.Stok.Contains(Search.ToUpper())||x.ImageUrl.Contains(Search))
-                    .ToList();
+                products = context.Products
+                    .Where(x => x.ProductName.Contains(Search.ToLower()) || x.TumbName.Contains(Search) || x.ProductDescription.Contains(Search) ).ToList();
             }
             else
             {
-                vega = context.VegaProducts.ToList();
+                products = context.Products.ToList();
             }
 
-            return View(vega);
+            return View(products);
+        }
+        [HttpGet]
+        public IActionResult SearchEng(string Search)
+        {
+            List<Product> products;
+            if (Search != "" && Search != null)
+            {
+                products = context.Products
+                    .Where(x => x.ProductName.Contains(Search.ToLower()) || x.TumbName.Contains(Search) || x.ProductDescription.Contains(Search)).ToList();
+            }
+            else
+            {
+                products = context.Products.ToList();
+            }
 
-            //try
-            //{
-            //    var prquery = from x in context.VegaProducts select x;
-            //    if (!string.IsNullOrEmpty(Search))
-            //    {
-            //        prquery = prquery.Where(x => x.Name.Contains(Search.ToUpper()) || x.CategoryName.ToUpper().Contains(Search.ToUpper()) || x.Stok.ToUpper().Contains(Search.ToUpper()));
-            //    }
-            //    return  View(prquery.ToPagedList(syf, 350));
-
-            //}
-            //catch (Exception ex)
-            //{
-
-
-            //    _logger.LogError(ex, ex.Message);
-            //    string msg = ex.Message;
-
-            //}
-
+            return View(products);
         }
 
-        public IActionResult Banka()
+        [HttpGet]
+        public IActionResult SearchDe(string Search)
+        {
+            List<Product> products;
+            if (Search != "" && Search != null)
+            {
+                products = context.Products
+                    .Where(x => x.ProductName.Contains(Search.ToLower()) || x.TumbName.Contains(Search) || x.ProductDescription.Contains(Search)).ToList();
+            }
+            else
+            {
+                products = context.Products.ToList();
+            }
+
+            return View(products);
+        }
+
+        public IActionResult Index()
         {
             return View();
         }
+
+        public IActionResult IndexEng()
+        {
+            return View();
+        }
+
+
+        public IActionResult IndexDe()
+        {
+            return View();
+        }
+
 
         public IActionResult Privacy()
         {
@@ -107,4 +100,3 @@ namespace WebUI.Controllers
         }
     }
 }
-
