@@ -1,0 +1,5 @@
+C:\Users\AJANSCODE\Desktop\CelebiHirdavat\DynamicExcel\obj\Release\netcoreapp3.1\DynamicExcel.csproj.AssemblyReference.cache
+C:\Users\AJANSCODE\Desktop\CelebiHirdavat\DynamicExcel\obj\Release\netcoreapp3.1\DynamicExcel.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\AJANSCODE\Desktop\CelebiHirdavat\DynamicExcel\obj\Release\netcoreapp3.1\DynamicExcel.AssemblyInfoInputs.cache
+C:\Users\AJANSCODE\Desktop\CelebiHirdavat\DynamicExcel\obj\Release\netcoreapp3.1\DynamicExcel.AssemblyInfo.cs
+C:\Users\AJANSCODE\Desktop\CelebiHirdavat\DynamicExcel\obj\Release\netcoreapp3.1\DynamicExcel.csproj.CoreCompileInputs.cache
