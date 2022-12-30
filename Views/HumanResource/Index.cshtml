@@ -1,0 +1,518 @@
+﻿@model List<Entity.Corporate>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Poppins%3A100%2C200%2C300%2C400%2C500%2C600%2C700%2C800%2C900%2C100italic%2C200italic%2C300italic%2C400italic%2C500italic%2C600italic%2C700italic%2C800italic%2C900italic%7CRubik%3A300%2C400%2C500%2C600%2C700%2C800%2C900%2C300italic%2C400italic%2C500italic%2C600italic%2C700italic%2C800italic%2C900italic%7CAbril%20Fatface%3Aregular&#038;display=swap" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins%3A100%2C200%2C300%2C400%2C500%2C600%2C700%2C800%2C900%2C100italic%2C200italic%2C300italic%2C400italic%2C500italic%2C600italic%2C700italic%2C800italic%2C900italic%7CRubik%3A300%2C400%2C500%2C600%2C700%2C800%2C900%2C300italic%2C400italic%2C500italic%2C600italic%2C700italic%2C800italic%2C900italic%7CAbril%20Fatface%3Aregular&#038;display=swap" media="print" onload="this.media='all'" /><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins%3A100%2C200%2C300%2C400%2C500%2C600%2C700%2C800%2C900%2C100italic%2C200italic%2C300italic%2C400italic%2C500italic%2C600italic%2C700italic%2C800italic%2C900italic%7CRubik%3A300%2C400%2C500%2C600%2C700%2C800%2C900%2C300italic%2C400italic%2C500italic%2C600italic%2C700italic%2C800italic%2C900italic%7CAbril%20Fatface%3Aregular&#038;display=swap" /></noscript>
+<meta name='robots' content='noindex, nofollow' />
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link href='https://fonts.gstatic.com' crossorigin rel='preconnect' />
+<link rel="alternate" type="application/rss+xml" title="Outstock &raquo; Feed" href="https://demo.lion-themes.net/outstock/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Outstock &raquo; Comments Feed" href="https://demo.lion-themes.net/outstock/comments/feed/" />
+<link rel='stylesheet' id='woocommerce-smallscreen-css' href='https://demo.lion-themes.net/outstock/wp-content/plugins/woocommerce/assets/css/woocommerce-smallscreen.css?ver=6.9.2' type='text/css' media='only screen and (max-width: 768px)' />
+
+
+
+<noscript></noscript>
+<script type="text/template" id="tmpl-variation-template">
+    <div class="woocommerce-variation-description">{{{ data.variation.variation_description }}}</div>
+    <div class="woocommerce-variation-price">{{{ data.variation.price_html }}}</div>
+    <div class="woocommerce-variation-availability">{{{ data.variation.availability_html }}}</div>
+</script>
+<script type="text/template" id="tmpl-unavailable-variation-template">
+    <p>Sorry, this product is unavailable. Please choose a different combination.</p>
+</script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://demo.lion-themes.net/outstock/wp-includes/js/jquery/jquery.min.js?ver=3.6.0' id='jquery-core-js'></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://demo.lion-themes.net/outstock/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2' id='jquery-migrate-js'></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://demo.lion-themes.net/outstock/wp-content/plugins/woocommerce/assets/js/jquery-blockui/jquery.blockUI.min.js?ver=2.7.0-wc.6.9.2' id='jquery-blockui-js' defer></script>
+<script type='text/javascript' id='wc-add-to-cart-js-extra'>
+    /* <![CDATA[ */
+    var wc_add_to_cart_params = { "ajax_url": "\/outstock\/wp-admin\/admin-ajax.php", "wc_ajax_url": "\/outstock\/?wc-ajax=%%endpoint%%", "i18n_view_cart": "View cart", "cart_url": "https:\/\/demo.lion-themes.net\/outstock\/cart\/", "is_cart": "", "cart_redirect_after_add": "no" };
+    /* ]]> */
+</script>
+<meta name="generator" content="Redux 4.3.17" />
+<noscript>
+    <style>
+
+        .woocommerce-product-gallery {
+            opacity: 1 !important;
+        }</style>
+</noscript>
+<meta name="generator" content="Powered by WPBakery Page Builder - drag and drop page builder for WordPress." />
+<meta name="generator" content="Powered by Slider Revolution 6.5.31 - responsive, Mobile-Friendly Slider Plugin for WordPress with comfortable drag and drop interface." />
+<script type="rocketlazyloadscript">
+    function setREVStartSize(e){
+                //window.requestAnimationFrame(function() {
+                    window.RSIW = window.RSIW===undefined ? window.innerWidth : window.RSIW;
+                    window.RSIH = window.RSIH===undefined ? window.innerHeight : window.RSIH;
+                    try {
+                        var pw = document.getElementById(e.c).parentNode.offsetWidth,
+                            newh;
+                        pw = pw===0 || isNaN(pw) || (e.l=="fullwidth" || e.layout=="fullwidth") ? window.RSIW : pw;
+                        e.tabw = e.tabw===undefined ? 0 : parseInt(e.tabw);
+                        e.thumbw = e.thumbw===undefined ? 0 : parseInt(e.thumbw);
+                        e.tabh = e.tabh===undefined ? 0 : parseInt(e.tabh);
+                        e.thumbh = e.thumbh===undefined ? 0 : parseInt(e.thumbh);
+                        e.tabhide = e.tabhide===undefined ? 0 : parseInt(e.tabhide);
+                        e.thumbhide = e.thumbhide===undefined ? 0 : parseInt(e.thumbhide);
+                        e.mh = e.mh===undefined || e.mh=="" || e.mh==="auto" ? 0 : parseInt(e.mh,0);
+                        if(e.layout==="fullscreen" || e.l==="fullscreen")
+                            newh = Math.max(e.mh,window.RSIH);
+                        else{
+                            e.gw = Array.isArray(e.gw) ? e.gw : [e.gw];
+                            for (var i in e.rl) if (e.gw[i]===undefined || e.gw[i]===0) e.gw[i] = e.gw[i-1];
+                            e.gh = e.el===undefined || e.el==="" || (Array.isArray(e.el) && e.el.length==0)? e.gh : e.el;
+                            e.gh = Array.isArray(e.gh) ? e.gh : [e.gh];
+                            for (var i in e.rl) if (e.gh[i]===undefined || e.gh[i]===0) e.gh[i] = e.gh[i-1];
+
+                            var nl = new Array(e.rl.length),
+                                ix = 0,
+                                sl;
+                            e.tabw = e.tabhide>=pw ? 0 : e.tabw;
+                            e.thumbw = e.thumbhide>=pw ? 0 : e.thumbw;
+                            e.tabh = e.tabhide>=pw ? 0 : e.tabh;
+                            e.thumbh = e.thumbhide>=pw ? 0 : e.thumbh;
+                            for (var i in e.rl) nl[i] = e.rl[i]<window.RSIW ? 0 : e.rl[i];
+                            sl = nl[0];
+                            for (var i in nl) if (sl>nl[i] && nl[i]>0) { sl = nl[i]; ix=i;}
+                            var m = pw>(e.gw[ix]+e.tabw+e.thumbw) ? 1 : (pw-(e.tabw+e.thumbw)) / (e.gw[ix]);
+                            newh =  (e.gh[ix] * m) + (e.tabh + e.thumbh);
+                        }
+                        var el = document.getElementById(e.c);
+                        if (el!==null && el) el.style.height = newh+"px";
+                        el = document.getElementById(e.c+"_wrapper");
+                        if (el!==null && el) {
+                            el.style.height = newh+"px";
+                            el.style.display = "block";
+                        }
+                    } catch(e){
+                        console.log("Failure at Presize of Slider:" + e)
+                    }
+                //});
+              };</script>
+<link rel="icon" type="image/png" href="https://demo.lion-themes.net/outstock/wp-content/uploads/2018/02/favicon.ico">
+<style id="outstock_opt-dynamic-css" title="dynamic-css" class="redux-options-output">
+    body {
+        background-color: #fff;
+    }
+
+    body {
+        font-family: Poppins;
+        line-height: 24px;
+        font-weight: 400;
+        font-style: normal;
+        color: #606060;
+        font-size: 14px;
+        font-display: swap;
+    }</style>
+<style type="text/css" data-type="vc_shortcodes-custom-css">
+    .vc_custom_1511925350230 {
+        height: 300px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-image: url(../../banner-celebi2.jpg) !important;
+    }
+
+    .vc_custom_1463884265285 {
+        margin-top: 110px !important;
+        margin-bottom: 22px !important;
+    }
+
+    .vc_custom_1463888769007 {
+        padding-top: 110px !important;
+        background-color: #eeeeee !important;
+    }
+
+    .vc_custom_1463891796373 {
+        padding-top: 110px !important;
+    }
+
+    .vc_custom_1463891611273 {
+        margin-bottom: 110px !important;
+    }
+
+    .vc_custom_1463884277452 {
+        margin-top: 80px !important;
+    }
+
+    .vc_custom_1463888848835 {
+        margin-top: 80px !important;
+        margin-bottom: 40px !important;
+        background-color: #eeeeee !important;
+    }
+
+    .vc_custom_1511939043763 {
+        margin-bottom: 0px !important;
+    }
+
+    .vc_custom_1463887659026 {
+        margin-top: 20px !important;
+    }
+
+    .vc_custom_1511939057795 {
+        margin-bottom: 0px !important;
+    }
+
+    .vc_custom_1463887674016 {
+        margin-top: 20px !important;
+    }
+
+    .vc_custom_1511939252844 {
+        margin-bottom: 0px !important;
+    }
+
+    .vc_custom_1463887688294 {
+        margin-top: 20px !important;
+    }
+
+    .vc_custom_1463887016772 {
+        margin-top: 20px !important;
+    }</style>
+<noscript>
+    <style>
+        .wpb_animate_when_almost_visible {
+            opacity: 1;
+        }</style>
+</noscript>
+<style type="text/css">
+    img.wp-smiley,
+    img.emoji {
+        display: inline !important;
+        border: none !important;
+        box-shadow: none !important;
+        height: 1em !important;
+        width: 1em !important;
+        margin: 0 0.07em !important;
+        vertical-align: -0.1em !important;
+        background: none !important;
+        padding: 0 !important;
+    }
+
+    .htop {
+        display: flex;
+        align-content: flex-end;
+        flex-direction: row;
+        flex-wrap: wrap-reverse;
+        background: #333;
+        height: 51px;
+    }
+
+    .size {
+        margin: 20px;
+        font-size: 30px;
+    }
+
+</style>
+
+
+
+
+<!-- blog area start -->
+<div id="content" class="site-content">
+    <div id="main-content" class="has_padding home-template">
+@*        <div class="section-element about-top vc_custom_1511925350230 vc_row-has-fill"><div class="container"><div class="row"><div class="wpb_column column_container col-sm-12"><div class="vc_column-inner"><div class="wpb_wrapper"><h1 style=" padding-top:107px; font-size: 30px;color: #000000;text-align: center" class="vc_custom_heading">Çelebi Hırdavat</h1></div></div></div></div></div></div><div class="section-element about-middle vc_custom_1463884265285">
+*@          @*  <div class="container">
+                <div class="row">
+                    <div style="margin-bottom:25px;" class="wpb_column column_container col-sm-12">
+                        <div style="    display: flex ;     justify-content: space-around; " class="vc_column-inner">
+                            <div "class=" wpb_wrapper">
+                                <h2 style="margin-bottom:50px; font-size: 36px;color: #202020;text-align: center" class="vc_custom_heading">İnsan Kaynakları</h2><div style="display:flex; class="vc_row wpb_row vc_inner vc_row-fluid vc_custom_1463884277452">
+                                    <div class="wpb_column column_container col-sm-4">
+                                        <div style="margin:20px;" class="vc_column-inner">
+                                            <div class="wpb_wrapper">
+                                                <div class="feature_text_widget  ">
+                                                    <div class="toptext">
+                                                        <i class="size fa-sharp fa-solid fa-flag"></i>
+                                                        <div class="feature_text">
+                                                            <h4 style="    font-size: 14px;" class="mt-30"> 25 Yılı Aşkın tecrübe</h4>
+                                                            <!--text-->
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div><div class="wpb_column column_container col-sm-4">
+                                        <div style="margin:20px;" class="vc_column-inner">
+                                            <div class="wpb_wrapper">
+                                                <div class="feature_text_widget  ">
+                                                    <div class="toptext">
+                                                        <span class="size fa fa-cogs"></span><div class="feature_text">
+                                                            <h4 style="    font-size: 14px;" class="mt-30">Kurumsal İş Akışı</h4>
+                                                            <!--text-->
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div><div class="wpb_column column_container col-sm-4">
+                                        <div style="margin:20px;" class="vc_column-inner">
+                                            <div class="wpb_wrapper">
+                                                <div class="feature_text_widget  ">
+                                                    <div class="toptext">
+                                                        <i class="size fa-sharp fa-solid fa-truck-fast"></i>
+                                                        <div class="feature_text">
+                                                            <h4 style="    font-size: 14px;" class="mt-30">
+                                                                Hızlı Tedarik
+                                                            </h4>
+                                                            <!--Text-->
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>*@
+        </div>
+        <div class="section-element about-bottom vc_custom_1463888769007 vc_row-has-fill">
+            <div class="container">
+                <div class="row">
+                    <div style="margin-bottom:25px;" class="wpb_column column_container col-sm-12">
+                        <div class="vc_column-inner">
+
+                            <div class="wpb_wrapper">
+
+
+                                <h2 style="font-size: 36px;color: #202020;text-align: start" class="vc_custom_heading">Etik Değerler</h2><p class="sub-heading-text"></p><div class="vc_row wpb_row vc_inner vc_row-fluid meet-team vc_custom_1463888848835 vc_row-has-fill">
+                                    <p style="font-size:14px;">
+                                    Çalışanlarımızın ahlaki davranışları bizi yansıtır. Öğrenmeye açık, öneri verebilen ve gelişim fırsatlarını yakalayarak kendini gerçekleştirmek isteyen çalışanlarımızı desteklemek bizi biz yapan değerler arasındadır.
+
+                                    Tüm çalışanlarımızdan hem şirket içerisinde örnek çalışan olmaları hem de şirket dışında şirketimizin saygınlığını ve güven yapısını geliştirecek davranışlarda bulunmaları beklenir.
+
+                                    Tüm çalışanlarımız etik kurallarımıza gerekli hassasiyeti göstermekle ve üzerine düşen sorumlulukları yerine getirmekle yükümlüdür
+                                    </p>
+
+                                <h2 style="font-size: 36px;color: #202020;text-align: start" class="vc_custom_heading">Çalışma Kültürümüz</h2><p class="sub-heading-text"></p><div class="vc_row wpb_row vc_inner vc_row-fluid meet-team vc_custom_1463888848835 vc_row-has-fill">
+                                        <p style="font-size:14px;">
+                                        Çalışanlarımız, müşterilerimiz ve iştirakte olduğumuz tüm iş ortaklarımız yasalarla belirlenmiş olan gizlilik kurallarına uymakla yükümlüdür. Şirketimiz, KVKK Kapsamına uygun olarak iş anlaşmaları yaptığımız müşterilerimizin ve çalışanlarımızın bilgilerinin, değerlerinin ve özel bilgilerinin korunmasına son derece hassasiyetle yaklaşmaktadır.
+                                        </p>
+
+                                    <h2 style="font-size: 36px;color: #202020;text-align: start" class="vc_custom_heading">Özlük Hakları ve İş Sağlığı</h2><p class="sub-heading-text"></p><div class="vc_row wpb_row vc_inner vc_row-fluid meet-team vc_custom_1463888848835 vc_row-has-fill">
+                                            <p style="font-size:14px;">
+                                            Şirketimiz tüm çalışanlarının yasal haklarını zamanında ve eksiksiz olarak gerçekleştirmekle yükümlüdür. Çalışanlarımıza kendilerini en iyi şekilde ifade edebilecekleri ortamı hazırlayarak kendilerini güven ortamında hissederek çalışmalarını bekleriz.
+
+                                            İş sağlığı ve güvenliği adına alınabilecek tüm önlemler alanında deneyimli İSG Uzmanı ve İşyeri Hekimleri tarafından alınır.
+
+                                            Çelebi Hırdavat, tüm süreçleri şirket içinde yayınlamış olduğu prosedür, yönetmelik vb. kaynaklarla destekleyerek uygulamaların takipçisi olur.
+
+
+                                            </p>
+
+
+
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+            <script type="rocketlazyloadscript">
+                window.RS_MODULES = window.RS_MODULES || {};
+                window.RS_MODULES.modules = window.RS_MODULES.modules || {};
+                window.RS_MODULES.waiting = window.RS_MODULES.waiting || [];
+                window.RS_MODULES.defered = false;
+                window.RS_MODULES.moduleWaiting = window.RS_MODULES.moduleWaiting || {};
+                window.RS_MODULES.type = 'compiled';
+            </script>
+            <script type="rocketlazyloadscript" data-rocket-type="text/javascript">
+                jQuery(document).on('click', 'a.lionthemes_like_post', function(e){
+                    var like_title;
+                    if(jQuery(this).hasClass('liked')){
+                        jQuery(this).removeClass('liked');
+                        like_title = jQuery(this).data('unliked_title');
+                    }else{
+                        jQuery(this).addClass('liked');
+                        like_title = jQuery(this).data('liked_title');
+                    }
+                    var post_id = jQuery(this).data("post_id");
+                    var me = jQuery(this);
+                    jQuery.ajax({
+                        type: 'POST',
+                        dataType: 'json',
+                        url: ajaxurl,
+                        data: 'action=lionthemes_update_like&post_id=' + post_id,
+                        success: function(data){
+                            me.children('.number').text(data);
+                            me.parent('.likes-counter').attr('title', '').attr('data-original-title', like_title);
+                        }
+                    });
+                    e.preventDefault();
+                    return false;
+                });
+            </script>
+            <script type="rocketlazyloadscript">
+                (function() {function maybePrefixUrlField() {
+                    if (this.value.trim() !== '' && this.value.indexOf('http') !== 0) {
+                        this.value = "http://" + this.value;
+                    }
+                }
+
+                var urlFields = document.querySelectorAll('.mc4wp-form input[type="url"]');
+                if (urlFields) {
+                    for (var j=0; j < urlFields.length; j++) {
+                        urlFields[j].addEventListener('blur', maybePrefixUrlField);
+                    }
+                }
+                })();</script><div class="quickview-wrapper">
+                <div class="overlay-bg" onclick="hideQuickView()"></div>
+            </div><script type="text/html" id="wpb-modifications"></script>
+            <script type="rocketlazyloadscript" data-rocket-type="text/javascript">
+                (function () {
+                    var c = document.body.className;
+                    c = c.replace(/woocommerce-no-js/, 'woocommerce-js');
+                    document.body.className = c;
+                })();
+            </script>
+            <style id='rs-plugin-settings-inline-css' type='text/css'>
+                #rs-demo-id {
+                }
+            </style>
+            <script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://demo.lion-themes.net/outstock/wp-content/plugins/yith-woocommerce-wishlist/assets/js/jquery.selectBox.min.js?ver=1.2.0' id='jquery-selectBox-js' defer></script>
+            <script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='//demo.lion-themes.net/outstock/wp-content/plugins/woocommerce/assets/js/prettyPhoto/jquery.prettyPhoto.min.js?ver=3.1.6' id='prettyPhoto-js' defer></script>
+            <script type='text/javascript' id='jquery-yith-wcwl-js-extra'>
+                /* <![CDATA[ */
+                var yith_wcwl_l10n = { "ajax_url": "\/outstock\/wp-admin\/admin-ajax.php", "redirect_to_cart": "no", "multi_wishlist": "", "hide_add_button": "1", "enable_ajax_loading": "", "ajax_loader_url": "https:\/\/demo.lion-themes.net\/outstock\/wp-content\/plugins\/yith-woocommerce-wishlist\/assets\/images\/ajax-loader-alt.svg", "remove_from_wishlist_after_add_to_cart": "1", "is_wishlist_responsive": "1", "time_to_close_prettyphoto": "3000", "fragments_index_glue": ".", "reload_on_found_variation": "1", "mobile_media_query": "768", "labels": { "cookie_disabled": "We are sorry, but this feature is available only if cookies on your browser are enabled.", "added_to_cart_message": "<div class=\"woocommerce-notices-wrapper\"><div class=\"woocommerce-message\" role=\"alert\">Product added to cart successfully<\/div><\/div>" }, "actions": { "add_to_wishlist_action": "add_to_wishlist", "remove_from_wishlist_action": "remove_from_wishlist", "reload_wishlist_and_adding_elem_action": "reload_wishlist_and_adding_elem", "load_mobile_action": "load_mobile", "delete_item_action": "delete_item", "save_title_action": "save_title", "save_privacy_action": "save_privacy", "load_fragments": "load_fragments" }, "nonce": { "add_to_wishlist_nonce": "6bbafdd8b6", "remove_from_wishlist_nonce": "f44e86d7db", "reload_wishlist_and_adding_elem_nonce": "cc1aff8853", "load_mobile_nonce": "8cfcee8b81", "delete_item_nonce": "3bcbb8faa1", "save_title_nonce": "144ec15d87", "save_privacy_nonce": "3a20f56184", "load_fragments_nonce": "7d1c63149c" } };
+                /* ]]> */
+            </script>
+            <script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://demo.lion-themes.net/outstock/wp-content/plugins/yith-woocommerce-wishlist/assets/js/jquery.yith-wcwl.min.js?ver=3.12.0' id='jquery-yith-wcwl-js' defer></script>
+            <script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' src='https://demo.lion-themes.net/outstock/wp-content/cache/min/1/outstock/wp-content/plugins/contact-form-7/includes/swv/js/index.js?ver=1663638517' id='swv-js' defer></script>
+            <script type='text/javascript' id='contact-form-7-js-extra'>
+                /* <![CDATA[ */
+                var wpcf7 = { "api": { "root": "https:\/\/demo.lion-themes.net\/outstock\/wp-json\/", "namespace": "contact-form-7\/v1" }, "cached": "1" };
+                /* ]]> */
+            </script>
+            <script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' src='https://demo.lion-themes.net/outstock/wp-content/cache/min/1/outstock/wp-content/plugins/contact-form-7/includes/js/index.js?ver=1663638517' id='contact-form-7-js' defer></script>
+            <script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://demo.lion-themes.net/outstock/wp-content/plugins/revslider/public/assets/js/rbtools.min.js?ver=6.5.18' async id='tp-tools-js'></script>
+            <script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://demo.lion-themes.net/outstock/wp-content/plugins/revslider/public/assets/js/rs6.min.js?ver=6.5.31' async id='revmin-js'></script>
+            <script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://demo.lion-themes.net/outstock/wp-content/plugins/woocommerce/assets/js/js-cookie/js.cookie.min.js?ver=2.1.4-wc.6.9.2' id='js-cookie-js' defer></script>
+            <script type='text/javascript' id='woocommerce-js-extra'>
+                /* <![CDATA[ */
+                var woocommerce_params = { "ajax_url": "\/outstock\/wp-admin\/admin-ajax.php", "wc_ajax_url": "\/outstock\/?wc-ajax=%%endpoint%%" };
+                /* ]]> */
+            </script>
+            <script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://demo.lion-themes.net/outstock/wp-content/plugins/woocommerce/assets/js/frontend/woocommerce.min.js?ver=6.9.2' id='woocommerce-js' defer></script>
+            <script type='text/javascript' id='wc-cart-fragments-js-extra'>
+                /* <![CDATA[ */
+                var wc_cart_fragments_params = { "ajax_url": "\/outstock\/wp-admin\/admin-ajax.php", "wc_ajax_url": "\/outstock\/?wc-ajax=%%endpoint%%", "cart_hash_key": "wc_cart_hash_5a5f140d16cbb800fb67d43937b87148", "fragment_name": "wc_fragments_5a5f140d16cbb800fb67d43937b87148", "request_timeout": "5000" };
+                /* ]]> */
+            </script>
+            <script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://demo.lion-themes.net/outstock/wp-content/plugins/woocommerce/assets/js/frontend/cart-fragments.min.js?ver=6.9.2' id='wc-cart-fragments-js' defer></script>
+            <script type="rocketlazyloadscript" data-rocket-type='text/javascript' id='rocket-browser-checker-js-after'>
+                "use strict";var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||!1,descriptor.configurable=!0,"value"in descriptor&&(descriptor.writable=!0),Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){return protoProps&&defineProperties(Constructor.prototype,protoProps),staticProps&&defineProperties(Constructor,staticProps),Constructor}}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor))throw new TypeError("Cannot call a class as a function")}var RocketBrowserCompatibilityChecker=function(){function RocketBrowserCompatibilityChecker(options){_classCallCheck(this,RocketBrowserCompatibilityChecker),this.passiveSupported=!1,this._checkPassiveOption(this),this.options=!!this.passiveSupported&&options}return _createClass(RocketBrowserCompatibilityChecker,[{key:"_checkPassiveOption",value:function(self){try{var options={get passive(){return!(self.passiveSupported=!0)}};window.addEventListener("test",null,options),window.removeEventListener("test",null,options)}catch(err){self.passiveSupported=!1}}},{key:"initRequestIdleCallback",value:function(){!1 in window&&(window.requestIdleCallback=function(cb){var start=Date.now();return setTimeout(function(){cb({didTimeout:!1,timeRemaining:function(){return Math.max(0,50-(Date.now()-start))}})},1)}),!1 in window&&(window.cancelIdleCallback=function(id){return clearTimeout(id)})}},{key:"isDataSaverModeOn",value:function(){return"connection"in navigator&&!0===navigator.connection.saveData}},{key:"supportsLinkPrefetch",value:function(){var elem=document.createElement("link");return elem.relList&&elem.relList.supports&&elem.relList.supports("prefetch")&&window.IntersectionObserver&&"isIntersecting"in IntersectionObserverEntry.prototype}},{key:"isSlowConnection",value:function(){return"connection"in navigator&&"effectiveType"in navigator.connection&&("2g"===navigator.connection.effectiveType||"slow-2g"===navigator.connection.effectiveType)}}]),RocketBrowserCompatibilityChecker}();
+            </script>
+            <script type='text/javascript' id='rocket-preload-links-js-extra'>
+                /* <![CDATA[ */
+                var RocketPreloadLinksConfig = { "excludeUris": "\/outstock(\/(?:.+\/)?feed(?:\/(?:.+\/?)?)?$|\/(?:.+\/)?embed\/|\/checkout\/|\/cart\/|\/my-account\/|\/wc-api\/v(.*)|\/(index\\.php\/)?wp\\-json(\/.*|$))|\/refer\/|\/go\/|\/recommend\/|\/recommends\/", "usesTrailingSlash": "1", "imageExt": "jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php", "fileExt": "jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php|html|htm", "siteUrl": "https:\/\/demo.lion-themes.net\/outstock", "onHoverDelay": "100", "rateThrottle": "3" };
+                /* ]]> */
+            </script>
+            <script type="rocketlazyloadscript" data-rocket-type='text/javascript' id='rocket-preload-links-js-after'>
+                (function() {
+                "use strict";var r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},e=function(){function i(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(e,t,n){return t&&i(e.prototype,t),n&&i(e,n),e}}();function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var t=function(){function n(e,t){i(this,n),this.browser=e,this.config=t,this.options=this.browser.options,this.prefetched=new Set,this.eventTime=null,this.threshold=1111,this.numOnHover=0}return e(n,[{key:"init",value:function(){!this.browser.supportsLinkPrefetch()||this.browser.isDataSaverModeOn()||this.browser.isSlowConnection()||(this.regex={excludeUris:RegExp(this.config.excludeUris,"i"),images:RegExp(".("+this.config.imageExt+")$","i"),fileExt:RegExp(".("+this.config.fileExt+")$","i")},this._initListeners(this))}},{key:"_initListeners",value:function(e){-1<this.config.onHoverDelay&&document.addEventListener("mouseover",e.listener.bind(e),e.listenerOptions),document.addEventListener("mousedown",e.listener.bind(e),e.listenerOptions),document.addEventListener("touchstart",e.listener.bind(e),e.listenerOptions)}},{key:"listener",value:function(e){var t=e.target.closest("a"),n=this._prepareUrl(t);if(null!==n)switch(e.type){case"mousedown":case"touchstart":this._addPrefetchLink(n);break;case"mouseover":this._earlyPrefetch(t,n,"mouseout")}}},{key:"_earlyPrefetch",value:function(t,e,n){var i=this,r=setTimeout(function(){if(r=null,0===i.numOnHover)setTimeout(function(){return i.numOnHover=0},1e3);else if(i.numOnHover>i.config.rateThrottle)return;i.numOnHover++,i._addPrefetchLink(e)},this.config.onHoverDelay);t.addEventListener(n,function e(){t.removeEventListener(n,e,{passive:!0}),null!==r&&(clearTimeout(r),r=null)},{passive:!0})}},{key:"_addPrefetchLink",value:function(i){return this.prefetched.add(i.href),new Promise(function(e,t){var n=document.createElement("link");n.rel="prefetch",n.href=i.href,n.onload=e,n.onerror=t,document.head.appendChild(n)}).catch(function(){})}},{key:"_prepareUrl",value:function(e){if(null===e||"object"!==(void 0===e?"undefined":r(e))||!1 in e||-1===["http:","https:"].indexOf(e.protocol))return null;var t=e.href.substring(0,this.config.siteUrl.length),n=this._getPathname(e.href,t),i={original:e.href,protocol:e.protocol,origin:t,pathname:n,href:t+n};return this._isLinkOk(i)?i:null}},{key:"_getPathname",value:function(e,t){var n=t?e.substring(this.config.siteUrl.length):e;return n.startsWith("/")||(n="/"+n),this._shouldAddTrailingSlash(n)?n+"/":n}},{key:"_shouldAddTrailingSlash",value:function(e){return this.config.usesTrailingSlash&&!e.endsWith("/")&&!this.regex.fileExt.test(e)}},{key:"_isLinkOk",value:function(e){return null!==e&&"object"===(void 0===e?"undefined":r(e))&&(!this.prefetched.has(e.href)&&e.origin===this.config.siteUrl&&-1===e.href.indexOf("?")&&-1===e.href.indexOf("#")&&!this.regex.excludeUris.test(e.href)&&!this.regex.images.test(e.href))}}],[{key:"run",value:function(){"undefined"!=typeof RocketPreloadLinksConfig&&new n(new RocketBrowserCompatibilityChecker({capture:!0,passive:!0}),RocketPreloadLinksConfig).init()}}]),n}();t.run();
+                }());
+            </script>
+            <script type='text/javascript' id='yith-woocompare-main-js-extra'>
+                /* <![CDATA[ */
+                var yith_woocompare = { "ajaxurl": "\/outstock\/?wc-ajax=%%endpoint%%", "actionadd": "yith-woocompare-add-product", "actionremove": "yith-woocompare-remove-product", "actionview": "yith-woocompare-view-table", "actionreload": "yith-woocompare-reload-product", "added_label": "Added", "table_title": "Product Comparison", "auto_open": "yes", "loader": "https:\/\/demo.lion-themes.net\/outstock\/wp-content\/plugins\/yith-woocommerce-compare\/assets\/images\/loader.gif", "button_text": "Compare", "cookie_name": "yith_woocompare_list", "close_label": "Close" };
+                /* ]]> */
+            </script>
+            <script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://demo.lion-themes.net/outstock/wp-content/plugins/yith-woocommerce-compare/assets/js/woocompare.min.js?ver=2.18.0' id='yith-woocompare-main-js' defer></script>
+            <script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://demo.lion-themes.net/outstock/wp-content/plugins/yith-woocommerce-compare/assets/js/jquery.colorbox-min.js?ver=1.4.21' id='jquery-colorbox-js' defer></script>
+            <script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://demo.lion-themes.net/outstock/wp-includes/js/comment-reply.min.js?ver=6.0.2' id='comment-reply-js' defer></script>
+            <script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://demo.lion-themes.net/outstock/wp-includes/js/underscore.min.js?ver=1.13.3' id='underscore-js' defer></script>
+            <script type='text/javascript' id='wp-util-js-extra'>
+                /* <![CDATA[ */
+                var _wpUtilSettings = { "ajax": { "url": "\/outstock\/wp-admin\/admin-ajax.php" } };
+                /* ]]> */
+            </script>
+            <script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://demo.lion-themes.net/outstock/wp-includes/js/wp-util.min.js?ver=6.0.2' id='wp-util-js' defer></script>
+            <script type='text/javascript' id='wc-add-to-cart-variation-js-extra'>
+                /* <![CDATA[ */
+                var wc_add_to_cart_variation_params = { "wc_ajax_url": "\/outstock\/?wc-ajax=%%endpoint%%", "i18n_no_matching_variations_text": "Sorry, no products matched your selection. Please choose a different combination.", "i18n_make_a_selection_text": "Please select some product options before adding this product to your cart.", "i18n_unavailable_text": "Sorry, this product is unavailable. Please choose a different combination." };
+                /* ]]> */
+            </script>
+            <script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://demo.lion-themes.net/outstock/wp-content/plugins/woocommerce/assets/js/frontend/add-to-cart-variation.min.js?ver=6.9.2' id='wc-add-to-cart-variation-js' defer></script>
+            <script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://demo.lion-themes.net/outstock/wp-content/themes/outstock/js/bootstrap.min.js?ver=6.0.2' id='bootstrap-js-js' defer></script>
+            <script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://demo.lion-themes.net/outstock/wp-content/themes/outstock/js/jquery.wow.min.js?ver=6.0.2' id='owl-wow-js-js' defer></script>
+            <script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' src='https://demo.lion-themes.net/outstock/wp-content/cache/min/1/outstock/wp-content/themes/outstock/js/modernizr.custom.js?ver=1663638517' id='owl-modernizr-js-js' defer></script>
+            <script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' src='https://demo.lion-themes.net/outstock/wp-content/cache/min/1/outstock/wp-content/themes/outstock/owl-carousel/owl.carousel.js?ver=1663638517' id='owl-carousel-js-js' defer></script>
+            <script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://demo.lion-themes.net/outstock/wp-content/themes/outstock/js/autoGrid.min.js?ver=6.0.2' id='auto-grid-js' defer></script>
+            <script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' src='https://demo.lion-themes.net/outstock/wp-content/cache/min/1/outstock/wp-content/themes/outstock/fancybox/jquery.fancybox.pack.js?ver=1663638517' id='fancybox-js' defer></script>
+            <script type="rocketlazyloadscript" data-rocket-type='text/javascript' id='outstock-theme-js-js-before'>
+                var ajaxurl = "https://demo.lion-themes.net/outstock/wp-admin/admin-ajax.php";
+            </script>
+            <script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' src='https://demo.lion-themes.net/outstock/wp-content/cache/min/1/outstock/wp-content/themes/outstock/js/custom.js?ver=1663638517' id='outstock-theme-js-js' defer></script>
+            <script type="rocketlazyloadscript" data-rocket-type='text/javascript' id='outstock-theme-js-js-after'>
+                            jQuery(document).ready(function($){
+                                $(window).scroll(function() {
+                                    var start = 100;
+
+                                    if ($(this).scrollTop() > start){
+                                        $(".main-wrapper > header").addClass("sticky");
+                                    }
+                                    else{
+                                        $(".main-wrapper > header").removeClass("sticky");
+                                    }
+                                });
+                            });
+                jQuery(document).on('click', '.mini_cart_item .remove', function(e){
+                                            var product_id = jQuery(this).data("product_id");
+                                            var item_li = jQuery(this).closest('li');
+                                            var a_href = jQuery(this).attr('href');
+                                            jQuery.ajax({
+                                                type: 'POST',
+                                                dataType: 'json',
+                                                url: ajaxurl,
+                                                data: 'action=outstock_product_remove&' + (a_href.split('?')[1] || ''),
+                                                success: function(data){
+                                                    if(typeof(data) != 'object'){
+                                                        alert('Could not remove cart item.');
+                                                        return;
+                                                    }
+                                                    jQuery('.topcart .cart-toggler .qty').html(data.qty);
+                                                    jQuery('.topcart .cart-toggler .subtotal').html(data.subtotal);
+                                                    jQuery('.topcart_content').css('height', 'auto');
+                                                    if(data.qtycount > 0){
+                                                        jQuery('.topcart_content .total .amount').html(data.subtotal);
+                                                    }else{
+                                                        jQuery('.topcart_content .cart_list').html('<li class="empty">No products in the cart.</li>');
+                                                        jQuery('.topcart_content .total').remove();
+                                                        jQuery('.topcart_content .buttons').remove();
+                                                    }
+                                                    item_li.remove();
+                                                }
+                                            });
+                                            e.preventDefault();
+                                            return false;
+                                        });
+            </script>
+            <script type='text/javascript' id='wpb_composer_front_js-js-extra'>
+                /* <![CDATA[ */
+                var vcData = { "currentTheme": { "slug": "outstock" } };
+                                        /* ]]> */
+            </script>
+            <script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://demo.lion-themes.net/outstock/wp-content/plugins/js_composer/assets/js/dist/js_composer_front.min.js?ver=6.9.0' id='wpb_composer_front_js-js' defer></script>
+            <script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://demo.lion-themes.net/outstock/wp-content/plugins/js_composer/assets/lib/vc_waypoints/vc-waypoints.min.js?ver=6.9.0' id='vc_waypoints-js' defer></script>
+            <script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' defer src='https://demo.lion-themes.net/outstock/wp-content/cache/min/1/outstock/wp-content/plugins/mailchimp-for-wp/assets/js/forms.js?ver=1663638517' id='mc4wp-forms-api-js'></script>
+
+            <br />
+            <br />
+            <br />
+

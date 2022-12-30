@@ -1,0 +1,102 @@
+﻿@model List<Entity.Vega>
+
+@{
+    ViewData["Title"] = "SelectDelete";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="main-container">
+		<div class="pd-ltr-20">
+		<form asp-action="Search" asp-controller="Product" method="get">
+			<div class="sdiv">
+				<div class="input-group">
+					<input type="text" value="@ViewData["GetProducts"]" name="Search" id="arama" class="clw form-control" placeholder="Aradığınız ürün, kategori veya markayı yazınız ?">
+					<span class="input-group-btn sbtnd"><button class="btn btn-default" type="submit"><i class="fa fa-search"></i></button></span>
+				</div>
+			</div>
+		</form>
+
+
+		<div class="card-box mb-30">
+				<h2 class="h4 pd-20"></h2>
+				<form asp-action="SelectDelete" asp-controller="Product" method="post">
+
+				<table class="data-table table nowrap">
+					<thead>
+						<tr>
+							<th class="table-plus datatable-nosort"></th>
+							<th>
+								<input type="checkbox" name="allcheck" id="selectAll" /> Tümünü Seç
+
+							</th>
+							<th></th>
+							<th></th>
+							<th></th>
+							<th></th>
+							<th class="datatable-nosort">Action</th>
+						</tr>
+					</thead>
+					<tbody>
+						@foreach (var item in Model)
+					   {
+						   	<tr>
+
+								<td>
+									   
+								   </td>
+							<td class="table-plus sorting_1" tabindex="0">
+								<img src="~/urunler/@item.ImageUrl" width="70" height="70" alt="">
+							</td>
+							<td>
+								<h5 class="font-16">@item.Name</h5>
+							
+							</td>
+							
+
+							<td>
+								<div class="dropdown">
+									<a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle" href="#" role="button" data-toggle="dropdown">
+										<i class="dw dw-more"></i>
+									</a>
+									<div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
+								
+									</div>
+								</div>
+							</td>
+						</tr>
+					   }
+					
+		
+					</tbody>
+				</table>
+				<input type="submit" value="Delete"/>
+			</form>
+
+		</div>
+
+	
+
+		<br />
+		<br />
+		<br />
+		</div>
+	</div>
+
+
+
+	 <script>
+
+		 $(function (){
+
+		$("#selectAll").click(function () {
+			$("input[type=checkbox]").prop('checked', $(this)('checked'));
+			 } );
+
+			 $("input[type=checkbox]").click(function(){
+			if (!$(this).prop("checked")) {
+				$("#selectAll").prop("checked", false);
+				 }
+			 })
+		 })
+
+	 </script>

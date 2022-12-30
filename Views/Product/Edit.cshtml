@@ -1,0 +1,114 @@
+﻿@model Entity.Vega
+@{
+	ViewData["Title"] = "Edit";
+	Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<div class="main-container">
+	<div class="pd-ltr-20 xs-pd-20-10">
+		<div class="min-height-200px">
+			<div class="page-header">
+				<div class="row">
+					<div class="col-md-6 col-sm-12">
+						<div class="title">
+							<h4>Ürünler</h4>
+						</div>
+
+					</div>
+
+				</div>
+			</div>
+
+
+
+			<!-- Default Basic Forms Start -->
+			<div class="pd-20 card-box mb-30">
+				<div class="clearfix">
+					<div class="pull-left">
+						<h4 class="text-blue h4">Ürün Güncelleme Sayfası</h4>
+					</div>
+
+				</div>
+				<form asp-action="Edit" enctype="multipart/form-data">
+					<div class="form-group row">
+						<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+						<input type="hidden" asp-for="Id" />
+					</div>
+					<div class="form-group row">
+						<label class="col-sm-12 col-md-2 col-form-label">Ürün Adı</label>
+						<div class="col-sm-12 col-md-10">
+							<input asp-for="Name" class="form-control" />
+
+						</div>
+					</div>
+					<div class="form-group row">
+						<label class="col-sm-12 col-md-2 col-form-label">Stok Kodu</label>
+						<div class="col-sm-12 col-md-10">
+							<input asp-for="Stok" class="form-control" />
+
+						</div>
+
+					</div>
+
+					<div class="form-group row">
+						<label class="col-sm-12 col-md-2 col-form-label">Kategori Id</label>
+						<div class="col-sm-12 col-md-10">
+							<input asp-for="CategoryId" class="form-control" />
+
+						</div>
+
+					</div>
+					<div class="form-group row">
+						<label class="col-sm-12 col-md-2 col-form-label">Kategori İsmi</label>
+						<div class="col-sm-12 col-md-10">
+							<input asp-for="CategoryName" class="form-control" />
+
+						</div>
+
+					</div>
+
+
+					<div class="form-group row">
+						<label class="col-sm-12 col-md-2 col-form-label">Birim Tipi</label>
+						<div class="col-sm-12 col-md-10">
+							<input asp-for="MonyTyp" class="form-control">
+
+						</div>
+
+					</div>
+
+					<div class="form-group row">
+						<label class="col-sm-12 col-md-2 col-form-label">İskonto Oranı</label>
+						<div class="col-sm-12 col-md-10">
+							<input asp-for="Iskonto" class="form-control">
+
+						</div>
+
+					</div>
+
+					<div class="form-group row">
+						<label class="col-sm-12 col-md-2 col-form-label">Fiyat</label>
+						<div class="col-sm-12 col-md-10">
+							<input asp-for="Price" class="form-control" />
+
+						</div>
+
+					</div>
+
+					<div class="form-group row">
+						<label class="col-sm-12 col-md-2 col-form-label">Resim Adı</label>
+						<div class="col-sm-12 col-md-10">
+							<input asp-for="ImageUrl" class="form-control" />
+
+						</div>
+
+					</div>
+
+
+
+					<button class="btn  btn-outline-primary w-100" type="submit"><i class="icon-copy fa fa-save" aria-hidden="true"></i> Kaydet</button>
+
+
+				</form>
+

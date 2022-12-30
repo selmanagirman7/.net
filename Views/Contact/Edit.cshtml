@@ -1,0 +1,66 @@
+﻿@model Entity.Contact
+@{
+	ViewData["Title"] = "Edit";
+	Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<div class="main-container">
+	<div class="pd-ltr-20 xs-pd-20-10">
+		<div class="min-height-200px">
+			<div class="page-header">
+				<div class="row">
+					<div class="col-md-6 col-sm-12">
+						<div class="title">
+							<h4>İletişim</h4>
+						</div>
+
+					</div>
+
+				</div>
+			</div>
+
+
+
+			<!-- Default Basic Forms Start -->
+			<div class="pd-20 card-box mb-30">
+				<div class="clearfix">
+					<div class="pull-left">
+						<h4 class="text-blue h4">İletişim Güncelleme Sayfası</h4>
+					</div>
+
+				</div>
+				<form asp-action="Edit" enctype="multipart/form-data">
+					<div class="form-group row">
+						<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+						<input type="hidden" asp-for="ContactId" />
+					</div>
+					<div class="form-group row">
+						<label class="col-sm-12 col-md-2 col-form-label">Adres</label>
+						<div class="col-sm-12 col-md-10">
+							<input asp-for="CompanyAdress" class="form-control" />
+
+						</div>
+					</div>
+
+					<div class="form-group row">
+						<label class="col-sm-12 col-md-2 col-form-label">Mail</label>
+						<div class="col-sm-12 col-md-10">
+							<input asp-for="ComponayMail" class="form-control" />
+
+						</div>
+					</div>
+
+					<div class="form-group row">
+						<label class="col-sm-12 col-md-2 col-form-label">Telefon No</label>
+						<div class="col-sm-12 col-md-10">
+							<input asp-for="CompanyPhone2" class="form-control" />
+
+						</div>
+					</div>
+
+					<button class="btn  btn-outline-primary w-100" type="submit"><i class="icon-copy fa fa-save" aria-hidden="true"></i> Kaydet</button>
+
+
+				</form>
+

@@ -1,0 +1,368 @@
+﻿
+
+<style>
+
+
+    .clw::placeholder
+    color: #fff;
+    }
+
+    input::-webkit-input-placeholder { /* WebKit browsers */
+        color: #c67171;
+    }
+
+    input:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+        color: #c67171;
+    }
+
+    input::-moz-placeholder { /* Mozilla Firefox 19+ */
+        color: #c67171;
+    }
+
+    input:-ms-input-placeholder { /* Internet Explorer 10+ */
+        color: #c67171;
+    }
+
+    .clw::placeholder {
+        /* Firefox, Chrome, Opera */
+        color: #ddabab;
+    }
+
+    :-ms-input-placeholder {
+        /* Internet Explorer 10-11 */
+        color: #c67171;
+    }
+
+</style>
+
+<header class="desk">
+    <div id="stuck_container">
+        <div class="htop">
+            <nav class="navbar">
+                <div class="container">
+                    <div class="hidden-xs col-sm-12 col-md-12">
+                        <ul class="nav navbar-nav navbar-right mrg">
+
+                            <li class="acli hidden-sm hidden-md"><a href="/Home/Index">Anasayfa</a></li>
+                            <li class="acli hidden-sm hidden-md"><a href="/Product/Index">Ürünlerimiz</a></li>
+                            <li class="acli hidden-sm hidden-md"><a href="/About/Index">Kurumsal</a></li>
+                            <li class="acli hidden-sm hidden-md"><a href="/HumanResource/Index">İnsan Kaynakları</a></li>
+                            <li class="acli hidden-sm hidden-md"><a href="/Contact/Index">İletişim</a></li>
+                            <li class="acli hidden-sm hidden-md"><a href="/Home/Banka">Banka Hesapları</a></li>
+
+
+                            <li class="acli"><a href="/About/Index/" class="btn btn-danger" style="border-radius:inherit; border:0">@*<span class="fa fa-pencil-square-o"></span>*@ Kurumsal</a></li>
+                            <li class="acli">
+                                <a href="/Contact/Index" class="btn btn-primary" style="border-radius:inherit; border:0;background-color:#b62d2d;">@*<span class="fa fa-user-circle-o"></span>*@ İletişim</a>
+
+                            </li>
+
+
+
+                            <li><a href="https://www.facebook.com/people/%C3%87elebi-H%C4%B1rdavat/100031728527466/" target="_blank"><i style="font-size:large" class="fa-brands fa-facebook"></i></a></li>
+                            <li><a href="https://www.instagram.com/celebihirdavat/" target="_blank"><i style="font-size:large" class="fa-brands fa-instagram"></i></a></li>
+                            <li><a href="https://twitter.com/celebi_hirdavat" target="_blank"><i style="font-size:large" class="fa-brands fa-twitter"></i></a></li>
+                            <li><a href="#" target="_blank"><i style="font-size:large" class="fa-brands fa-linkedin"></i></a></li>
+                            <li><a href="#" target="_blank"><i style="font-size:large" class="fa-brands fa-youtube"></i></a></li>
+
+                        </ul>
+                    </div>
+
+            </nav>
+        </div>
+
+        <div class="hmain">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-4 col-sm-3 col-md-3"><a href="/Home/Index" class="logo "><h1><img class="mainlogo" src="~/celebi-logo.png"></h1></a></div>
+                    <div class="col-xs-8 col-sm-9 col-md-9">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-6 col-md-8">
+                                <form asp-action="Search" asp-controller="Home" method="get">
+                                    <div class="sdiv">
+                                        <div class="input-group">
+                                            <input type="text" value="@ViewData["GetProducts"]" name="Search" id="arama" class="degerBuyuk clw form-control" placeholder="Aradığınız ürün, kategori veya markayı yazınız ?">
+                                            <span class="input-group-btn sbtnd"><button class="btn btn-default" type="submit"><i class="fa fa-search"></i></button></span>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-md-4 hright">
+
+                                <a href="~/assets/bayi-oldugumuz-firmalar.pdf" target="_blank" class="btn btn-primary" style="background: #fff;border: 0;color: #c52c2c;font-weight: 700;">Bayisi Olduğumuz Firmalar</a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="hbot">
+    </div>
+    <div id="stuck_container" class="isStuck" style="top: -74px; visibility: hidden; position: fixed; width: 100%; margin-top: 0px;">
+        <div class="htop">
+            <nav class="navbar">
+                <div class="container">
+                    <div class="hidden-xs col-sm-12 col-md-12">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="acli hidden-sm hidden-md">
+                                <a href="/dergi/">Dergi</a>
+                                <ul class="altmenu">
+                                    <li><a href="/dergi/">Arşiv</a></li>
+                                    <li><a href="/künye/">Künye</a></li>
+                                </ul>
+                            </li>
+                            <li class="acli hidden-sm hidden-md">
+                                <a href="/haberler/">Haberler</a>
+                                <ul class="altmenu">
+                                    <li><a href="/haberler/">Son Eklenen</a></li>
+                                    <li><a href="/türkiye’den/">Türkiye'den</a></li>
+                                    <li><a href="/dünyadan/">Dünyadan</a></li>
+                                    <!--<li><a href="/iş-dünyası/">İş Dünyası</a></li>-->
+                                </ul>
+                            </li>
+                            <!--<li class="acli"><a href="/iş-dünyası/" style="background:#018ADA;font-weight:bold;font-family:Roboto Slab;">İş Dünyası</a></li>-->
+                            <li class="acli hidden-sm hidden-md">
+                                <a href="#">Özel İçerik</a>
+                                <ul class="altmenu">
+                                    <li><a href="/röportaj/">Röportaj</a></li>
+                                    <li><a href="/tesis-inceleme/">Tesis İnceleme</a></li>
+                                    <li><a href="/ürün-inceleme/">Ürün İnceleme</a></li>
+                                    <li><a href="/makale/">Makale</a></li>
+                                </ul>
+                            </li>
+                            <li class="acli hidden-sm hidden-md"><a href="/etkinliktakvimi/">Etkinlik Takvimi</a></li>
+                            <li class="acli hidden-sm hidden-md"><a href="/reklam/">Reklam</a></li>
+                            <li class="acli hidden-sm hidden-md"><a href="/aboneol/">Abonelik</a></li>
+                            <li class="acli hidden-sm hidden-md"><a href="/abonelereozel/"><span class="fa fa-star-o"></span> Abonelere Özel</a></li>
+                            <li class="acli hidden-sm hidden-md"><a href="/iletisim/">Bize Ulaşın</a></li>
+
+
+                            <li class="acli"><a href="/aboneol/" class="btn btn-danger" style="border:0"><span class="fa fa-pencil-square-o"></span> Abone Ol</a></li>
+                            <li class="acli">
+                                <a data-fancybox="modal" data-src="#login" href="javascript:;" class="btn btn-primary" style="border:0">
+                                    <span class="fa fa-user" aria-hidden="false"></span>
+                                    Giriş Yap
+                                </a>
+                                <div class="login" id="login" style="display:none;">
+                                </div>
+                            </li>
+
+
+
+                            <li><a href="https://www.facebook.com/madeniyagdunyasi/" target="_blank"><i class="fa fa-facebook-square"></i></a></li>
+                            <li><a href="https://www.instagram.com/madeniyagdunyasi/?hl=tr" target="_blank"><i class="fa fa-instagram"></i></a></li>
+                            <li><a href="https://twitter.com/lubricantworld" target="_blank"><i class="fa fa-twitter-square"></i></a></li>
+                            <li><a href="https://tr.linkedin.com/company/lubricant-world" target="_blank"><i class="fa fa-linkedin-square"></i></a></li>
+                            <li><a href="https://www.youtube.com/channel/UCgvf8pzRs2J4pcOfjq0peaQ" target="_blank"><i class="fa fa-youtube-square"></i></a></li>
+                            <li><a href="/">TR</a></li>
+                            <li><a href="/en/">EN</a></li>
+                        </ul>
+                    </div>
+                    <div style="margin-top:5px;"></div>
+
+            </nav>
+        </div>
+        <div class="hmain">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-4 col-sm-3 col-md-3"><a href="/Home/Index" class="logo"><h1><span></span><img src="/images/logo.png"></h1></a></div>
+                    <div class="col-xs-8 col-sm-9 col-md-9">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-6 col-md-8">
+                                <form asp-action="Search" asp-controller="Home" method="get">
+                                    <div class="sdiv">
+                                        <div class="input-group">
+                                            <input type="text" id="arama" class="form-control" placeholder="Site içi arama" name="text">
+                                            <span class="input-group-btn sbtnd"><button class="btn btn-default" type="submit"><i class="fa fa-search"></i></button></span>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-md-4 hright">
+
+                                <a href="/" class="btn btn-primary" style="background: #fff;border: 0;color: #c52c2c;font-weight: 700;"></a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<header class="mobile">
+    <div id="header-sticky" class="header__area grey-bg">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4">
+                    <div class="logo">
+                        <a href="/Home/Index"><img src="~/logo.png" alt="logo"></a>
+                    </div>
+                </div>
+                <div class="col-xl-9 col-lg-9 col-md-8 col-sm-8">
+                    <div class="header__right p-relative d-flex justify-content-between align-items-center">
+                        <div class="main-menu d-none d-lg-block">
+                            <nav>
+                                <ul>
+                                    <li class="active has-dropdown">
+                                        <a href="index.html">Anasayfa</a>
+                                        <ul class="submenu transition-3">
+                                            <li><a href="index.html">Home Style 1</a></li>
+                                            <li><a href="index-2.html">Home Style 2</a></li>
+                                            <li><a href="index-3.html">Home Style 3</a></li>
+                                            <li><a href="index-4.html">Home Style 4</a></li>
+                                            <li><a href="index-5.html">Home Style 5</a></li>
+                                            <li><a href="index-6.html">Home Style 6</a></li>
+                                            <li><a href="index-7.html">Home Style 7</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="mega-menu has-dropdown">
+                                        <a href="shop.html">Shop</a>
+                                        <ul class="submenu transition-3" data-background="assets/img/bg/mega-menu-bg.jpg">
+                                            <li class="has-dropdown">
+                                                <a href="shop.html">Shop Pages</a>
+                                                <ul>
+                                                    <li><a href="shop.html">Standard Shop Page</a></li>
+                                                    <li><a href="shop-right-sidebar.html">Shop Right Sidebar</a></li>
+                                                    <li><a href="shop-4-col.html">Shop 4 Column</a></li>
+                                                    <li><a href="shop-3-col.html">Shop 3 Column</a></li>
+                                                    <li><a href="shop.html">Shop Page</a></li>
+                                                    <li><a href="shop.html">Shop Page </a></li>
+                                                    <li><a href="shop.html">Shop Infinity</a></li>
+                                                </ul>
+                                            </li>
+                                            <li class="has-dropdown">
+                                                <a href="shop.html">Products Pages</a>
+                                                <ul>
+                                                    <li><a href="product-details.html">Product Details</a></li>
+                                                    <li><a href="product-details.html">Product Page V2</a></li>
+                                                    <li><a href="product-details.html">Product Page V3</a></li>
+                                                    <li><a href="product-details.html">Product Page V4</a></li>
+                                                    <li><a href="product-details.html">Simple Product</a></li>
+                                                    <li><a href="product-details.html">Variable Product</a></li>
+                                                    <li><a href="product-details.html">External Product</a></li>
+                                                </ul>
+                                            </li>
+                                            <li class="has-dropdown">
+                                                <a href="shop.html">Other Shop Pages</a>
+                                                <ul>
+                                                    <li><a href="wishlist.html">Wishlist</a></li>
+                                                    <li><a href="cart.html">Shopping Cart</a></li>
+                                                    <li><a href="checkout.html">Checkout</a></li>
+                                                    <li><a href="register.html">Register</a></li>
+                                                    <li><a href="login.html">Login</a></li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="has-dropdown">
+                                        <a href="blog.html">Blog</a>
+                                        <ul class="submenu transition-3">
+                                            <li><a href="blog.html">Blog</a></li>
+                                            <li><a href="blog-left-sidebar.html">Blog Left Sidebar</a></li>
+                                            <li><a href="blog-no-sidebar.html">Blog No Sidebar</a></li>
+                                            <li><a href="blog-2-col.html">Blog 2 Column</a></li>
+                                            <li><a href="blog-2-col-mas.html">BLog 2 Col Masonary</a></li>
+                                            <li><a href="blog-3-col.html">Blog 3 Column</a></li>
+                                            <li><a href="blog-details.html">Blog Details</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="has-dropdown">
+                                        <a href="shop.html">Pages</a>
+                                        <ul class="submenu transition-3">
+                                            <li><a href="wishlist.html">Wishlist</a></li>
+                                            <li><a href="cart.html">Shopping Cart</a></li>
+                                            <li><a href="checkout.html">Checkout</a></li>
+                                            <li><a href="register.html">Register</a></li>
+                                            <li><a href="login.html">Login</a></li>
+                                            <li><a href="error.html">Error 404</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="contact.html">Contact</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <div class="mobile-menu-btn d-lg-none">
+                            <a href="javascript:void(0);" class="mobile-menu-toggle"><i class="fas fa-bars"></i></a>
+                        </div>
+                        <div class="header__action">
+                            <ul>
+                                <li><a href="#" class="search-toggle"><i class="ion-ios-search-strong"></i> Ara</a></li>
+                               
+                                <li>
+                           
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- header area end -->
+<!-- scroll up area start -->
+<div class="scroll-up mobile" id="scroll" style="display: none;">
+    <a href="javascript:void(0);"><i class="fas fa-level-up-alt"></i></a>
+</div>
+<!-- scroll up area end -->
+<!-- search area start -->
+<section class="header__search white-bg transition-3 mobile">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="header__search-inner text-center">
+                    <form asp-action="Search" asp-controller="Home" method="get">
+                        <div class="header__search-btn">
+                            <a href="javascript:void(0);" class="header__search-btn-close"><i class="fal fa-times"></i></a>
+                        </div>
+                        <div class="header__search-header">
+                            <h3>Ara</h3>
+                        </div>
+
+                        <div class="header__search-input p-relative">
+                            <input type="text" value="@ViewData["GetProducts"]" name="Search" id="arama" class="degerBuyuk clw form-control" placeholder="Aradığınız ürün, kategori veya markayı yazınız ?">
+                            <button type="submit"><i class="far fa-search"></i></button>
+                        </div>
+                    </form>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="body-overlay transition-3"></div>
+<!-- search area end -->
+<!-- extra info area start -->
+<section class="extra__info transition-3 mobile">
+    <div style="overflow-x: hidden; overflow-y:"scroll; class="extra__info-inner">
+        <div class="extra__info-close text-right">
+            <a href="javascript:void(0);" class="extra__info-close-btn"><i class="fal fa-times"></i></a>
+        </div>
+        <!-- side-mobile-menu start -->
+        <nav class="side-mobile-menu d-block d-lg-none">
+            <ul id="mobile-menu-active">
+
+                <li><a href="/Home/Index">Anasayfa</a></li>
+
+                <li><a href="/Product/Index">Ürünlerimiz</a></li>
+                <li><a href="/About/Index">Kurumsal</a></li>
+                <li><a href="/Home/Banka">Banka Hesapları</a></li>
+                <li><a href="/HumanResource/Index">İnsan Kaynakları</a></li>
+                <li><a href="/Contact/Index">İletişim</a></li>
+                <li class="active has-dropdown">
+                    <a href="index.html">Kategoriler</a>
+                    <ul    " class="submenu transition-3">
+                        @await Component.InvokeAsync("MobileCategory")
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <!-- side-mobile-menu end -->
+    </div>
+</section>
+<div class="body-overlay transition-3 mobile"></div>
+<!-- extra info area end -->

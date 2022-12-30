@@ -1,0 +1,92 @@
+﻿@model IEnumerable<Entity.Vega>
+
+
+<style>
+    .oks {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        color: red;
+    }
+</style>
+
+
+<section class="sale__area pb-100">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="section__title-wrapper text-center mb-55">
+                    <div class="oks">
+                        <div><i class="fa fa-chevron-left"></i></div>
+                        <div><i class="fa fa-chevron-right"></i></div>
+                    </div>
+                    @* <div style="position:absolute;color:red;  " class="pos owl-prev"><i class="fa fa-chevron-right"></i></div>*@
+                    <div class="owl-nav">
+                        <div class="section__title mb-10">
+                            <h2>Benzer Ürünler</h2>
+                        </div>@*
+                        <div style="position:absolute; color:red;top:0px " class="owl-next"> <i class="fa fa-chevron-left"></i> </div>
+                        *@
+
+                    </div>
+                    <div class="section__sub-title">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="sale__area-slider owl-carousel">
+                    @foreach (var item in Model)
+                    {
+                        <div style="height:400px; border-radius:0; width: 100%;align-items:center;" class=" product__wrapper mb-60 border">
+                            <div class="product__thumb">
+                                <a href="/Product/Detail/@item.Id" class="w-img">
+                                    <img style="width:160px;" class="prdct-img" src="~/urunler/@item.ImageUrl" alt="product-img">
+                                    <img class="prdct-img product__thumb-2" src="~/urunler/@item.ImageUrl" alt="product-img">
+                                </a>
+
+                            </div>
+                            <div class="product__content p-relative">
+
+                                <p>@item.Name</p>
+
+                                <div class="product__content-inner  transition-3">
+
+                                    @{
+                                        var money = item.Price;
+                                        if (money == "0")
+                                        {
+                                            <span class="prc">Stok Dışı </span>
+
+                                        }
+                                        else
+                                        {
+                                            <span class="prc">@item.Price @item.MonyTyp </span>
+
+                                        }
+                                    }                                    <br />
+                                    <h4 class=" transition-3 hidde">
+                                        <a class="hidde"
+                                       href=" /Product/Detail/@item.Id">Ürüne Git</a>
+                                    </h4>
+
+                                    <div class="product__price transition-3">
+
+                                        @* <span>@item.Name</span>*@
+                                    </div>
+                                </div>
+                                <div class="add-cart p-absolute transition-3">
+                                    <a href="#"></a>
+                                </div>
+                            </div>
+                        </div>
+
+                    }
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

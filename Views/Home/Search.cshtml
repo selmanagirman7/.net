@@ -1,0 +1,293 @@
+﻿@using X.PagedList;
+@using X.PagedList.Mvc;
+@using X.PagedList.Mvc.Core
+@using X.PagedList.Web.Common
+
+@model List<Entity.Vega>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<style>
+    #pdf {
+        page-break-after: always;
+        page-break-inside: avoid;
+    }
+</style>
+
+
+<section class="page__title p-relative d-flex align-items-center" data-background="../../banner-celebi2.jpg">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="page__title-inner text-center">
+                    <h1>Ürünler</h1>
+                    <div class="page__title-breadcrumb">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb justify-content-center">
+                                <li class="breadcrumb-item"><a href="/Home/Index">Anasayfa</a></li>
+                                <li class="breadcrumb-item active" aria-current="page"> Ürünler</li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- page title area end -->
+<!-- shop area start -->
+
+
+<br />
+<br />
+<br />
+<br />
+<a style=" border:none;border-radius:12px; margin: 12px 147px 29px;" id="element-to-print" onclick="createPDF()" class="btn btn-primary">Pdf İndir</a>
+
+
+<section id="content" class="shop__area  pb-100">
+
+
+
+    <div class="container">
+
+        <div class="row" style=" justify-content: end;">
+            <div class="col-xl-3">
+
+
+                @await Component.InvokeAsync("GetCategoryComponent")
+            </div>
+            <div class="col-xl-9">
+                <div class="shop__content-area">
+
+                    <div class="tab-content">
+
+                        <div class="tab-pane fade show active" id="pills-grid" role="tabpanel"
+                             aria-labelledby="pills-grid-tab">
+                            <div id="pdf" class=" row custom-row-10">
+
+
+                                @foreach (var item in Model)
+                                {
+
+                                   
+
+                                        <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 custom-col-10 two ">
+                                            <div class=" product__wrapper mb-20 border">
+                                                <div class="product__thumb">
+                                                    <a href="/Product/Detail/@item.Id" class="w-img">
+                                                        <img src="~/urunler/@item.ImageUrl" alt="product-img">
+                                                        <img class="product__thumb-2" src="~/urunler/@item.ImageUrl"
+                                                     alt="product-img">
+                                                    </a>
+                                                    @*              <div class="product__action transition-3">
+                                            <a href="/Product/Detail/@item.Id" data-toggle="tooltip"
+                                            data-placement="top" title="Add to Wishlist">
+                                            <i class="fal fa-heart"></i>
+                                            </a>
+                                            <a href="/Product/Detail/@item.Id" data-toggle="tooltip"
+                                            data-placement="top" title="Compare">
+                                            <i class="fal fa-sliders-h"></i>
+                                            </a>
+                                            <!-- Button trigger modal -->
+                                            <a href="/Product/Detail/@item.Id" data-toggle="modal"
+                                            data-target="#productModalId">
+                                            <i class="fal fa-search"></i>
+                                            </a>
+
+                                            </div>*@
+                                                </div>
+                                                <div class="product__content p-relative">
+
+                                                    <p>@item.Name</p>
+                                                    <div class="product__content-inner  transition-3">
+                                                        @{
+                                                            var money = item.Price;
+                                                            if (money == "0")
+                                                            {
+                                                                <span class="prc">Stok Dışı </span>
+
+                                                            }
+                                                            else
+                                                            {
+                                                                <span class="prc">@item.Price @item.MonyTyp </span>
+
+                                                            }
+                                                        }
+                                                        <br />
+                                                        <h4 class=" transition-3 hidde">
+                                                            <a class="hidde"
+                                                       href=" /Product/Detail/@item.Id">Ürüne Git</a>
+                                                        </h4>
+
+                                                        <div class="product__price transition-3">
+
+                                                            @* <span>@item.Name</span>*@
+                                                        </div>
+                                                    </div>
+                                                    <div class="add-cart p-absolute transition-3">
+                                                        <a href="#"></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    
+
+                                }
+
+
+
+
+
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="pills-list" role="tabpanel" aria-labelledby="pills-list-tab">
+
+                            <div id="pdf" class=" rowpdf custom-row-10">
+
+
+                                @foreach (var item in Model)
+                                {
+
+                                   
+
+                                        <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 custom-col-10  ">
+                                            <div class=" product__wrapper mb-20 borderpdf">
+                                                <div class="product__thumbpdf">
+                                                    <a href="/Product/Detail/@item.Id" class="w-img">
+                                                        <img src="~/urunler/@item.ImageUrl" alt="product-img">
+                                                        <img class="product__thumb-2" src="~/urunler/@item.ImageUrl"
+                                                     alt="product-img">
+                                                    </a>
+                                                    @*              <div class="product__action transition-3">
+                                            <a href="/Product/Detail/@item.Id" data-toggle="tooltip"
+                                            data-placement="top" title="Add to Wishlist">
+                                            <i class="fal fa-heart"></i>
+                                            </a>
+                                            <a href="/Product/Detail/@item.Id" data-toggle="tooltip"
+                                            data-placement="top" title="Compare">
+                                            <i class="fal fa-sliders-h"></i>
+                                            </a>
+                                            <!-- Button trigger modal -->
+                                            <a href="/Product/Detail/@item.Id" data-toggle="modal"
+                                            data-target="#productModalId">
+                                            <i class="fal fa-search"></i>
+                                            </a>
+
+                                            </div>*@
+                                                </div>
+                                                <div class="product__content p-relative">
+
+                                                    <p>@item.Name d</p>
+                                                    <div class="product__content-inner  transition-3">
+                                                        @{
+                                                            var money = item.Price;
+                                                            if (money == "0")
+                                                            {
+                                                                <span class="prc">Stokta Dışı </span>
+
+                                                            }
+                                                            else
+                                                            {
+                                                                <span class="prc">@item.Price @item.MonyTyp </span>
+
+                                                            }
+                                                        }
+                                                        <br />
+                                                        <h4 class=" transition-3 hidde">
+                                                            <a class="hidde"
+                                                       href=" /Product/Detail/@item.Id">Ürüne Git</a>
+                                                        </h4>
+
+                                                        <div class="product__price transition-3">
+
+                                                            @* <span>@item.Name</span>*@
+                                                        </div>
+                                                    </div>
+                                                    <div class="add-cart p-absolute transition-3">
+                                                        <a href="#"></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    
+
+                                }
+
+
+
+
+
+                            </div>
+
+                        </div>
+                    </div>
+
+
+    
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.8.0/html2pdf.bundle.min.js" integrity="sha512-w3u9q/DeneCSwUDjhiMNibTRh/1i/gScBVp2imNVAMCt6cUHIw6xzhzcPFIaL3Q1EbI2l+nu17q2aLJJLo4ZYg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
+
+                    <script>
+                        function createPDF() {
+                            if (window.matchMedia('screen and (max-width: 768px)').matches) {
+                                var pdf = document.getElementById("pdf");
+
+                                var opt = {
+                                    //margin: [0, 0, 0, 0], //top, left, buttom, right,
+
+                                    filename: 'celebi_hirdavat.pdf',
+                                    image: { type: 'jpeg', quality: 12 },
+                                    html2canvas: { scale: 2 },
+                                    jsPDF: { unit: 'in', format: 'a5', orientation: 'portrait' }
+                                };
+                                html2pdf().set(opt).from(pdf).save();
+                            } else {
+                                var pdf = document.getElementById("pdf");
+
+                                var opt = {
+                                    //margin: [0, 0, 0, 0], //top, left, buttom, right,
+
+                                    filename: 'celebi_hirdavat.pdf',
+                                    image: { type: 'jpeg', quality: 12 },
+                                    html2canvas: { scale: 2 },
+                                    jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
+                                };
+                                html2pdf().set(opt).from(pdf).save();
+
+                            }
+
+
+                            window.alert("Çıktı İçin Masaüstü Formatını Kullanın");
+                        }
+
+
+
+                    </script>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

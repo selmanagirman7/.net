@@ -1,0 +1,15 @@
+﻿@model List<Entity.Contact>
+@{
+    ViewData["Title"] = "AdminContactDetail";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+@foreach (var item in Model)
+{
+    <h1>@item.Subject</h1>
+
+}
+    
+
+

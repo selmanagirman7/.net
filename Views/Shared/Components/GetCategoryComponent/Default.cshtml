@@ -1,0 +1,38 @@
+﻿@using Entity;
+@model List<Category>
+
+
+
+
+<div class="col-xl-3">
+    <div style="    width: 221px;" class="block-item" data-type="filter-product-groups">
+        <div class="block-item-title">
+            <span>Markalar</span>
+            <i class="fas fa-angle-down"></i>
+        </div>     <div class="block-item-title">
+            <a href="/Product/Index">Tüm Ürünler</a>
+            <i class="fas fa-angle-down"></i>
+        </div>
+        <div class="block-item-content">
+            <div class="filter-menu openbox-content" data-filter-menu-delay="0">
+                <div class="filter-menu-box filter-menu-category">
+
+
+                    @foreach (var item in Model)
+                   {
+
+                        <ul>
+                            <li>
+                                <a href="/Product/GetCategory/@item.CategoryId"> @item.CategoryName   </a>
+                            </li>
+                        </ul>
+                    }
+                </div>
+
+
+
+            </div>
+
+        </div>
+    </div>
+</div>

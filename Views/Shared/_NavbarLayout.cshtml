@@ -1,0 +1,98 @@
+﻿	<div class="left-side-bar">
+		<div class="brand-logo">
+	
+			<div class="close-sidebar" data-toggle="left-sidebar-close">
+				<i class="ion-close-round"></i>
+			</div>
+		</div>
+		<div class="menu-block customscroll">
+			<div class="sidebar-menu">
+				<ul id="accordion-menu">
+					<li class="dropdown">
+						<a href="javascript:;" class="dropdown-toggle">
+						<span class="micon" ><i class="icon-copy fa fa-tags" aria-hidden="true"></i>   </span>	<span class="mtext">Ürünler</span>
+						</a>
+						<ul class="submenu">
+						<li><a href="/excel/importexcel">Excel Import</a></li>
+							<li><a href="/Product/ProductAdd">Ürün Ekle </a></li>
+							<li><a href="/Product/AdminList">Tüm Ürünler</a></li>
+
+						</ul>
+					</li>
+					<li class="dropdown">
+						<a href="javascript:;" class="dropdown-toggle">
+							<span class="micon "><span><i class="icon-copy fa fa-cubes" aria-hidden="true"></i>  </span></span><span class="mtext">Kategoriler</span>
+						</a>
+						<ul class="submenu">
+							<li><a href="/Category/AddCategory">Kategori Ekle</a></li>
+							<li><a href="/Category/Index">Listele</a></li>
+						
+						</ul>
+
+					</li>
+				<li class="dropdown">
+					<a href="javascript:;" class="dropdown-toggle">
+						<span class="micon "><span><i class="icon-copy fa fa-cubes" aria-hidden="true"></i>  </span></span><span class="mtext">Kategori Sil</span>
+					</a>
+
+					@await Component.InvokeAsync("CategoryAdminList")
+				</li>
+				<li class="dropdown">
+					<a href="javascript:;" class="dropdown-toggle">
+						<span class="micon "><span><i class="icon-copy fa fa-cubes" aria-hidden="true"></i>  </span></span><span class="mtext">Kategori Excel İndir</span>
+					</a>
+
+					@await Component.InvokeAsync("ExcelCategory")
+				</li>
+					<li class="dropdown">
+						<a href="javascript:;" class="dropdown-toggle">
+							<span class="micon "> <i class="icon-copy fa fa-address-book" aria-hidden="true"></i> </span> <span class="mtext">Hakkımızda</span>
+						</a>
+						<ul class="submenu">
+							<li><a href="/About/AboutAdd">Hakkımızda Ekle</a></li>
+							<li><a href="/About/AdminList">Hakkımızda</a></li>
+						</ul>
+					</li>
+			
+
+				@*		<li class="dropdown">
+						<a href="javascript:;" class="dropdown-toggle">
+							<span class="micon "> <i class="icon-copy fa fa-address-book" aria-hidden="true"></i> </span> <span class="mtext">İnsan Kaynakları</span>
+						</a>
+						<ul class="submenu">
+							<li><a href="/HumanResource/HumanAdd">İnsan Kaynakları Ekle</a></li>
+							<li><a href="/HumanResource/AdminList">İnsan Kaynakları</a></li>
+						</ul>
+					</li>*@
+
+
+					<li class="dropdown">
+						<a href="javascript:;" class="dropdown-toggle">
+							<span class="micon "><i class="icon-copy fa fa-phone" aria-hidden="true"></i></span><span class="mtext"> İletişim </span>
+						</a>
+						<ul class="submenu">
+							<li><a href="/Contact/ContactAdd">İletişim Ekle</a></li>
+							<li><a href="/Contact/AdminList">İletişim</a></li>
+						
+						</ul>
+					</li>
+							<li class="dropdown">
+						<a href="javascript:;" class="dropdown-toggle">
+							<span class="micon "><i class="icon-copy fa fa-image" aria-hidden="true"></i></span><span class="mtext"> Image </span>
+						</a>
+						<ul class="submenu">
+							<li><a href="/Image/ImageAdd">Fotoğraf Ekle</a></li>
+							<li><a href="/Image/Index">Fotoğraflar</a></li>
+						
+						</ul>
+					</li>
+				
+			
+			
+
+
+
+				</ul>
+			</div>
+		</div>
+	</div>

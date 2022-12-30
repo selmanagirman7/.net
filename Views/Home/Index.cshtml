@@ -1,0 +1,223 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+
+@await Component.InvokeAsync("SliderComponent")
+<!-- banner area start -->
+<div class="banner__area">
+    <div class="container">
+        <div class="banner__inner p-relative mt--95">
+            <div class="row">
+                <div class="col-xl-4 col-lg-4 col-md-6">
+                    <div class="banner__item mb-30 p-relative">
+
+                        <div class="banner__thumb fix">
+                            <a href="/About/Index" class="w-img"><img src="~/assets/img/shop/banner/vida.jpg" alt="banner"></a>
+                        </div>
+                        <div class="banner__content p-absolute transition-3">
+                            <h5><a href="/About/Index">Kurumsal <br> </a></h5>
+                            <a href="/About/Index" class="link-btn"></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-6">
+                    <div class="banner__item mb-30 p-relative">
+                        <div class="banner__thumb fix">
+                            <a href="/Product/Index" class="w-img"><img src="~/assets/img/shop/banner/banner-glue.jpg" alt="banner"></a>
+                        </div>
+                        <div class="banner__content p-absolute transition-3">
+                            <h5><a href="/Product/Index">Ürünler</a></h5>
+                            <a href="/Product/Index" class="link-btn"></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-6">
+                    <div class="banner__item mb-30 p-relative">
+                        <div class="banner__thumb fix">
+                            <a href="/Contact/Index" class="w-img"><img src="~/assets/img/shop/banner/vida.jpg" alt="banner"></a>
+                        </div>
+                        <div class="banner__content p-absolute transition-3">
+                            <h5><a href="/Contact/Index">İletişim <br>  </a></h5>
+                            <a href="/Contact/Index" class="link-btn"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- product area start -->
+@await Component.InvokeAsync("ProductSlide")
+
+
+
+
+
+
+
+
+
+<!--banner area-->
+<div class="banner__area-2 pb-60">
+    <div class="container-fluid p-0">
+        <div class="row no-gutters">
+            <div class="col-xl-6 col-lg-6">
+                <div class="banner__item-2 banner-right p-relative mb-30 pr-15">
+                    <div class="banner__thumb fix">
+                        <a href="/Product/Index" class="w-img"><img src="~/banner-big-1.jpg" alt="banner"></a>
+                    </div>
+                    <div class="banner__content-2 p-absolute transition-3">
+                        <span>Çelebi Hırdavat</span>
+                        <h4><a href="/Product/Index">Ürün guruplarımız</a></h4>
+                        <p>
+                            Ürünlerimiz ve ürün gruplarımız hakkında detaylı
+                            <br> bilgiye sahip olmak için ürünlerimiz sayfasını inceleyebilirsiniz.
+
+                        </p>
+                        <a href="/Product/Index" class="os-btn os-btn-2">Ürünlerimizi İnceleyin <span></span></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-6 col-lg-6">
+                <div class=" banner__item-2 banner-left p-relative mb-30 pl-15">
+                    <div class="banner__thumb fix">
+                        <a href="/About/Index" class="w-img"><img src="~/banner-big-11.jpg" alt="banner"></a>
+                    </div>
+                    <div class="banner__content-2 banner__content-2-right p-absolute transition-3">
+                        <span>Çelebi Hırdavat</span>
+                        <h4>
+                            <a href="/About/Index">
+                                Bizi Daha Yakından Tanıyın
+                            </a>
+                        </h4>
+                        <p>
+                            Hakkımızda daha detaylı bilgilere ulaşmak isterseniz,
+                            <br> Kurumsal ve Hakkımızda sayflarımızı inceleyebilirsiniz.
+
+                        </p>
+                        <a href="/About/Index" class="os-btn os-btn-2">Hakkımızda <span></span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br />
+<br />
+<br />
+@await Component.InvokeAsync("ReferanceComponent")
+
+<br />
+<br />
+<br />
+<!-- client slider area end -->
+<!--Video Section -->
+
+<video class="video_content" playsinline autoplay loop muted class="bgvid">
+    <source src="~/celebi.mp4" type="video/mp4">
+</video>
+
+<br />
+<br />
+<br />
+
+
+
+<!-- shop modal end -->
+@await Component.InvokeAsync("ProductSlide")
+
+
+<section class="blog__area pb-70">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="section__title-wrapper text-center mb-55">
+                    <div class="section__title mb-10">
+                        <h2>Duyurular</h2>
+                    </div>
+                    <div class="section__sub-title">
+                        <p>Hırdavat Sektörü hakkında</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="blog__slider owl-carousel">
+                    <div class="blog__item mb-30">
+                        <div class="blog__thumb fix">
+                            <a href="blog-details.html" class="w-img"><img src="~/celebi-1.jpg" alt="blog"></a>
+                        </div>
+                        <div class="blog__content">
+                            <h4><a href="blog-details.html">Çelebi Hırdavat İstoç.</a></h4>
+                            <div class="blog__meta">
+                                <span> <a href="#">Çelebi Hırdavat</a></span>
+                                <span> 28.10.2022</span>
+                            </div>
+                            <p>Misyonumuz; Yöneticilerimiz, çalışanlarımız, tedarikçilerimiz ve bayilerimiz ile birlikte belirlediğimiz vizyon çerçevesinde yurtiçi ve yurtdışı pazarlarda yüksek müşteri memnuniyeti sağlayarak ülkemize değer katan bir kuruluş olmaktır.</p>
+                        </div>
+                    </div>
+                    <div class="blog__item mb-30">
+                        <div class="blog__thumb fix">
+                            <a href="blog-details.html" class="w-img"><img src="~/celebi-2.jpg" alt="blog"></a>
+                        </div>
+                        <div class="blog__content">
+                            <h4><a href="blog-details.html">Çelebi Hırdavat Web Sitesi Yayında</a></h4>
+                            <div class="blog__meta">
+                                <span> <a href="#">Çelebi Hırdavat</a></span>
+                                <span> 28.10.2022</span>
+                            </div>
+                            <p>Misyonumuz; Yöneticilerimiz, çalışanlarımız, tedarikçilerimiz ve bayilerimiz ile birlikte belirlediğimiz vizyon çerçevesinde yurtiçi ve yurtdışı pazarlarda yüksek müşteri memnuniyeti sağlayarak ülkemize değer katan bir kuruluş olmaktır.</p>
+                        </div>
+                    </div>
+@*                    <div class="blog__item mb-30">
+                        <div class="blog__thumb fix">
+                            <a href="blog-details.html" class="w-img"><img src="~/assets/img/blog/blog-3.jpg" alt="blog"></a>
+                        </div>
+                        <div class="blog__content">
+                            <h4><a href="blog-details.html">The information highway will</a></h4>
+                            <div class="blog__meta">
+                                <span>By <a href="#">Shahnewaz Sakil</a></span>
+                                <span>/ September 14, 2017</span>
+                            </div>
+                            <p>Mirum est notare quam littera gothica, quam nunc putamus parum claram.</p>
+                            <a href="blog-details.html" class="os-btn">read more</a>
+                        </div>
+                    </div>*@
+                    <div class="blog__item mb-30">
+                        <div class="blog__thumb fix">
+                            <a href="blog-details.html" class="w-img"><img src="~/celebi-3.jpg" alt="blog"></a>
+                        </div>
+                        <div class="blog__content">
+                            <h4><a href="blog-details.html">Hakkımızda Daha Fazlası</a></h4>
+                            <div class="blog__meta">
+                                <span> <a href="#">Çelebi Hırdavat</a></span>
+                                <span> 28.10.2022</span>
+                            </div>
+                            <p>Misyonumuz; Yöneticilerimiz, çalışanlarımız, tedarikçilerimiz ve bayilerimiz ile birlikte belirlediğimiz vizyon çerçevesinde yurtiçi ve yurtdışı pazarlarda yüksek müşteri memnuniyeti sağlayarak ülkemize değer katan bir kuruluş olmaktır.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+<section class="contact__map">
+    <div class="container-fluid p-0">
+        <div class="row no-gutters">
+            <div class="col-xl-12">
+                <div class="contact__map-wrapper p-relative">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12032.296232624549!2d28.8195576!3d41.0673738!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xee2d07dcc39062fe!2zw4dlbGViaSBIxLFyZGF2YXQgVGljLkx0ZC7FnnRpLg!5e0!3m2!1str!2str!4v1664545414573!5m2!1str!2str" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

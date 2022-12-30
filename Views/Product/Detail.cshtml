@@ -1,0 +1,191 @@
+﻿@model IEnumerable<Entity.Vega>
+@{
+    ViewData["Title"] = "Detail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@foreach (var item in Model)
+{
+
+    <section class="page__title p-relative d-flex align-items-center" data-background="../../banner-celebi2.jpg">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="page__title-inner text-center">
+                        <h1>@item.Name</h1>
+                        <div class="page__title-breadcrumb">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+}
+<br />
+<br />
+<br />
+
+<main style="background:#fdfdfd;" id="main ">
+    <div class="container ">
+        <div class="row">
+            <section class="detail-bg col-12">
+                @foreach (var item in Model)
+                {
+
+                    <div id="product-detail-container">
+                        <div class="product-area-top">
+                            <div class="row no-gutters mb-4 mb-md-5">
+                                <div class="col-lg-6  mb-4 mb-lg-0">
+                                    <div class="product-left">
+                                        <div class="product-image">
+                                            <div class="showcase-badges">
+                                            </div>
+                                            <div id="product-primary-image">
+                                                <img id="primary-image" alt="@item.Name" src="~/urunler/@item.ImageUrl" data-zoom-image="//st2.myideasoft.com/idea/gl/54/myassets/products/738/1409054147.jpg?revision=1635233131">
+                                            </div>
+
+
+                                        </div>
+                                        <div class="product-thumb-image-container">
+                                            <div id="product-thumb-image" class="slick-initialized slick-slider">
+                                                <div class="slick-list draggable">
+                                                    <div class="slick-track" style="opacity: 1; width: 110px; transform: translate3d(0px, 0px, 0px);">
+                                                        <div class="thumb-item slick-slide slick-current slick-active" data-slick-index="0" aria-hidden="false" style="width: 110px;" tabindex="0">
+                                                            @*   <div>
+                                                        <a href="#" data-image="//st2.myideasoft.com/idea/gl/54/myassets/products/738/1409054147.jpg?revision=1635233131" data-zoom-image="//st2.myideasoft.com/idea/gl/54/myassets/products/738/1409054147.jpg?revision=1635233131" tabindex="0" class="zoomGalleryActive">
+                                                        <img src="//st.myideasoft.com/idea/gl/54/myassets/products/738/1409054147_min.jpg?revision=1635233131" alt="Dekor Hassan Sıva Malası Plastik Saplı Yay Çeliği 22 Cm (372)">
+                                                        </a>
+                                                        </div>*@
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-xl-5">
+                                    <div class="product-right">
+                                        <div class="product-title">
+                                            <h1>@item.Name</h1>
+                                        </div>
+                                        <div class="product-title">
+                                            <h1>@item.Iskonto % İskonto (İskonto Hariç Tutar)</h1>
+                                        </div>
+                                        <div class="product-price-container">
+                                            <div class="product-price">
+                                                <div class="product-price-old">
+
+                                                    @{
+                                                        var money = item.Price;
+                                                        if (money == "0")
+                                                        {
+                                                            <span class="prc">Stok Dışı </span>
+
+                                                        }
+                                                        else
+                                                        {
+                                                            <span class="prc">@item.Price @item.MonyTyp </span>
+
+                                                        }
+                                                    }
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="product-list-container">
+                                            <div class="product-list-row">
+                                                <div class="product-list-title">Stok Kodu</div>
+                                                <div class="product-list-content">@item.Stok</div>
+                                            </div>
+                                            <div class="product-list-row">
+                                                <div class="product-list-title">Adet</div>
+
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+
+                                    <div class="product-cart-buttons">
+                                        <div class="product-buttons-wrapper" style="display:flex;">
+                                            <div style="margin:0 25px;" class="product-buttons-row">
+
+                                                <div style="margin-rigth:25px; background-color:#ffff;">
+                                                    <a href="mailto:info@celebihirdavat.com " target="_blank" class="quick-order-button">Mail</a>
+                                                </div>
+                                            </div>
+                                            <div class="product-buttons-row">
+
+                                                <div>
+                                                    <a style="border:1px solid #e31013; background-color:#ffff; color:#050505" href="/Contact/Index" target="_blank" class="quick-order-button">İletişim</a>
+
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    @*      <div class="product-social">
+                                <div class="product-social-title">Whatsapp Üzerinden Sipariş Ver </div>
+                                <div class="product-social-content">
+
+                                <a href="javascript:void(0);" class="product-social-whatsapp" data-selector="share-link" data-type="whatsapp">
+                                <i class="fab fa-whatsapp"></i>
+                                </a>
+
+
+                                </div>
+                                </div>*@
+
+                                    <div class="product-cart-buttons">
+                                        <div class="product-buttons-wrapper" style="display:flex;">
+                                            <div style="margin:0 25px;" class="product-buttons-row">
+
+                                                <div style="margin-rigth:25px; ">
+                                                    <a style="background-color:#128c7e; width: 27rem;" href="tel:+902125113454  "  class="quick-order-button">
+    
+
+                                                        İletişime Geç
+
+                                                        <i style="position:absolute;  left: 345px;" class="fa-solid fa-share-from-square"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+
+
+                                    </div>
+                                    <div class="product-cart-buttons">
+                                        <div class="product-buttons-wrapper" style="display:flex;">
+                                            <div style="margin:0 25px;" class="product-buttons-row">
+
+                                                <div style="margin-rigth:25px; ">
+                                                    <p>Ürün hakkında detaylı bilgiye sahip olmak, fiyat ve ödeme koşulları hakkında bilgi almak için bizlere 	+90 (212) 659 69 34 No lu telefon üzerinden ve info@celebihirdavat.com mail adresi üzerinden ulaşabilirsiniz.</p>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                }
+
+
+
+            </section>
+        </div>
+    </div>
+</main>
+
+
+
+
+
+@await Component.InvokeAsync("BenzerComponent")

@@ -1,0 +1,347 @@
+﻿@{
+    ViewData["Title"] = "Banka";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<main id="main">
+    <div class="container">
+        <div class="row">
+            <section class="col-12">
+
+                <script src="https://www.google.com/recaptcha/api.js?hl=tr" async="" defer=""></script>
+                <div class="contentbox-header">
+                    <h4>Banka Hesaplarımız</h4>
+                </div>
+                <div class="contentbox-body">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="contact-us banks">
+                                <div class="contentbox-sub-title mb-2">Banka Hesapları</div>
+
+
+
+
+                                <div class="contact-us-bank-item">
+                                    <div class="row">
+                                        <div class="col-12 col-md-2">
+                                            <div class="bank-logo">
+                                                <img src="//st2.myideasoft.com/7.2.2.5/storefront/assets/images/bank_logo/kuveyt_turk.png?revision=7.2.2.5-1"
+                                                     alt="Kuveyt Türk">
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-md-10">
+                                            <div class="bank-detail">
+                                                <strong>
+
+
+
+                                                    <input type="text" value="TR720020500001000424700002"
+                                                           id="kuveytturk" style="border:0;outline:0; width:300px">
+
+
+
+                                                    <button class="btn btn-success btn-xs"
+                                                            onclick="kuveytturk()">
+                                                        Kopyala
+                                                    </button>
+
+
+
+                                                </strong>
+                                                <p> Hesap Sahibi:ÇELEBİ HIRDAVAT TİCA RET LİMİTED ŞİRKETİ </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="contact-us-bank-item">
+                                    <div class="row">
+                                        <div class="col-12 col-md-2">
+                                            <div class="bank-logo">
+                                                <img src="//st1.myideasoft.com/7.2.2.5/storefront/assets/images/bank_logo/t_halk_bankasi.png?revision=7.2.2.5-1"
+                                                     alt="T. Halk Bankası">
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-md-10">
+                                            <div class="bank-detail">
+                                                <strong>
+
+
+
+
+
+                                                    <input type="text" value=":TR620001200989100010260628"
+                                                           id="halkusd" style="border:0;outline:0; width:300px">
+
+
+
+                                                    <button class="btn btn-success btn-xs"
+                                                            onclick="halkusd()">
+                                                        Kopyala
+                                                    </button>
+
+                                                </strong>
+                                                <p> Hesap Sahibi: ÇELEBİ HIRDAVAT TİCA RET LİMİTED ŞİRKETİ </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                      
+                                <div class="contact-us-bank-item">
+                                    <div class="row">
+                                        <div class="col-12 col-md-2">
+                                            <div class="bank-logo">
+                                                <img src="//st3.myideasoft.com/7.2.2.5/storefront/assets/images/bank_logo/yapi_kredi.png?revision=7.2.2.5-1"
+                                                     alt="Yapı Kredi">
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-md-10">
+                                            <div class="bank-detail">
+                                                <strong>
+                                                
+
+                                                    <input type="text" value="TR890006701000000082563538"
+                                                           id="yapikrediusd" style="border:0;outline:0; width:300px">
+
+
+
+                                                    <button class="btn btn-success btn-xs"
+                                                            onclick="yapikrediusd()">
+                                                        Kopyala
+                                                    </button>
+
+
+
+                                                </strong>
+                                                <p> Hesap Sahibi:ÇELEBİ HIRDAVAT TİCARET LİMİTED ŞİRKETİ </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+            
+                        </div>
+                    </div>
+
+                    <script>
+                        //<![CDATA[
+                        function akbanktl() {
+                            var copyText = document.getElementById("akbanktl");
+                            copyText.setSelectionRange(0, 99999);
+                            navigator.clipboard.writeText(copyText.value);
+
+
+
+
+                        }
+
+
+
+                        function akbankusd() {
+                            var copyText = document.getElementById("akbankusd");
+                            copyText.setSelectionRange(0, 99999);
+                            navigator.clipboard.writeText(copyText.value);
+
+                        }
+
+
+
+                        function akbankeuro() {
+                            var copyText = document.getElementById("akbankeuro");
+                            copyText.setSelectionRange(0, 99999);
+                            navigator.clipboard.writeText(copyText.value);
+
+                        }
+
+
+                        function deniztl() {
+                            var copyText = document.getElementById("deniztl");
+                            copyText.setSelectionRange(0, 99999);
+                            navigator.clipboard.writeText(copyText.value);
+
+                        }
+
+
+                        function denizusd() {
+                            var copyText = document.getElementById("denizusd");
+                            copyText.setSelectionRange(0, 99999);
+                            navigator.clipboard.writeText(copyText.value);
+
+                        }
+
+
+                        function denizeuro() {
+                            var copyText = document.getElementById("denizeuro");
+                            copyText.setSelectionRange(0, 99999);
+                            navigator.clipboard.writeText(copyText.value);
+
+                        }
+
+
+                        function garantitl() {
+                            var copyText = document.getElementById("garantitl");
+                            copyText.setSelectionRange(0, 99999);
+                            navigator.clipboard.writeText(copyText.value);
+
+                        }
+
+
+                        function garantiusd() {
+                            var copyText = document.getElementById("garantiusd");
+                            copyText.setSelectionRange(0, 99999);
+                            navigator.clipboard.writeText(copyText.value);
+
+                        }
+
+
+                        function garantieuro() {
+                            var copyText = document.getElementById("garantieuro");
+                            copyText.setSelectionRange(0, 99999);
+                            navigator.clipboard.writeText(copyText.value);
+
+                        }
+
+
+
+
+                        function kuveytturk() {
+                            var copyText = document.getElementById("kuveytturk");
+                            copyText.setSelectionRange(0, 99999);
+                            navigator.clipboard.writeText(copyText.value);
+
+                        }
+
+                        function halktl() {
+                            var copyText = document.getElementById("halktl");
+                            copyText.setSelectionRange(0, 99999);
+                            navigator.clipboard.writeText(copyText.value);
+
+                        }
+                        function halkusd() {
+                            var copyText = document.getElementById("halkusd");
+                            copyText.setSelectionRange(0, 99999);
+                            navigator.clipboard.writeText(copyText.value);
+
+                        }
+                        function finanstl() {
+                            var copyText = document.getElementById("finanstl");
+                            copyText.setSelectionRange(0, 99999);
+                            navigator.clipboard.writeText(copyText.value);
+
+                        }
+
+                        function finansusd() {
+                            var copyText = document.getElementById("finansusd");
+                            copyText.setSelectionRange(0, 99999);
+                            navigator.clipboard.writeText(copyText.value);
+
+                        }
+
+                        function finanseuro() {
+                            var copyText = document.getElementById("finanseuro");
+                            copyText.setSelectionRange(0, 99999);
+                            navigator.clipboard.writeText(copyText.value);
+
+                        }
+
+
+                        function tebtl() {
+                            var copyText = document.getElementById("tebtl");
+                            copyText.setSelectionRange(0, 99999);
+                            navigator.clipboard.writeText(copyText.value);
+
+                        }
+
+
+
+                        function tebusd() {
+                            var copyText = document.getElementById("tebusd");
+                            copyText.setSelectionRange(0, 99999);
+                            navigator.clipboard.writeText(copyText.value);
+
+                        }
+
+
+
+                        function tebeuro() {
+                            var copyText = document.getElementById("tebeuro");
+                            copyText.setSelectionRange(0, 99999);
+                            navigator.clipboard.writeText(copyText.value);
+
+                        }
+
+
+
+                        function tebsterlin() {
+                            var copyText = document.getElementById("tebsterlin");
+                            copyText.setSelectionRange(0, 99999);
+                            navigator.clipboard.writeText(copyText.value);
+
+                        }
+
+
+                        function istl() {
+                            var copyText = document.getElementById("istl");
+                            copyText.setSelectionRange(0, 99999);
+                            navigator.clipboard.writeText(copyText.value);
+
+                        }
+                        function isusd() {
+                            var copyText = document.getElementById("isusd");
+                            copyText.setSelectionRange(0, 99999);
+                            navigator.clipboard.writeText(copyText.value);
+
+                        }
+                        function iseuro() {
+                            var copyText = document.getElementById("iseuro");
+                            copyText.setSelectionRange(0, 99999);
+                            navigator.clipboard.writeText(copyText.value);
+
+                        }
+
+
+                        function vakifbank() {
+                            var copyText = document.getElementById("vakifbank");
+                            copyText.setSelectionRange(0, 99999);
+                            navigator.clipboard.writeText(copyText.value);
+
+                        }
+
+                        function yapikreditl() {
+                            var copyText = document.getElementById("yapikreditl");
+                            copyText.setSelectionRange(0, 99999);
+                            navigator.clipboard.writeText(copyText.value);
+
+                        }
+
+                        function yapikrediusd() {
+                            var copyText = document.getElementById("yapikrediusd");
+                            copyText.setSelectionRange(0, 99999);
+                            navigator.clipboard.writeText(copyText.value);
+
+                        }
+
+                        function yapikredieuro() {
+                            var copyText = document.getElementById("yapikredieuro");
+                            copyText.setSelectionRange(0, 99999);
+                            navigator.clipboard.writeText(copyText.value);
+
+                        }
+
+                        function ziraat() {
+                            var copyText = document.getElementById("ziraat");
+                            copyText.setSelectionRange(0, 99999);
+                            navigator.clipboard.writeText(copyText.value);
+
+                        }
+
+                    </script>
+                </div>
+
+        </div>
+    </div>
+    </section>
+    </div>
+    </div>
+</main>

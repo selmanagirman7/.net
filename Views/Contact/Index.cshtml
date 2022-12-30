@@ -1,0 +1,147 @@
+﻿@model List<Entity.Contact>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+            <section class="page__title p-relative d-flex align-items-center" data-background="../../banner-celebi2.jpg">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="page__title-inner text-center">
+                                <h1>İletişme Geçiniz</h1>
+                                <div class="page__title-breadcrumb">                                 
+                                    <nav aria-label="breadcrumb">
+                                    <ol class="breadcrumb justify-content-center">
+                                        <li class="breadcrumb-item"><a href="/Home/Index">Anasayfa</a></li>
+                                        <li class="breadcrumb-item active" aria-current="page"> İletişim</li>
+                                    </ol>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- page title area end -->
+
+            <!-- contact area start -->
+            <section class="contact__area pb-100 pt-95">
+                @foreach (var item in Model)
+               {
+                   if(item.CompanyAdress!=null){
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-6 col-lg-6">
+                        <div class="contact__info">
+                            <h3>İletişim Bilgilerimiz</h3>
+                            <ul class="mb-55">
+                                <li class="d-flex mb-35">
+                                    <div class="contact__info-icon mr-20">
+                                        <i class="fal fa-map-marker-alt"></i>
+                                    </div>
+                                    <div class="contact__info-content">
+                                        <h6>Address:</h6>
+                                        <span>@item.CompanyAdress</span>
+                                    </div>
+                                </li>
+                                <li class="d-flex mb-35">
+                                    <div class="contact__info-icon mr-20">
+                                        <i class="fal fa-envelope-open-text"></i>
+                                    </div>
+                                    <div class="contact__info-content">
+                                        <h6>Email:</h6>
+                                        <span><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="f5b69a9b81949681b59087909b819d909890db969a98">@item.ComponayMail</a></span>
+                                    </div>
+                                </li>
+                                <li class="d-flex mb-35">
+                                    <div class="contact__info-icon mr-20">
+                                        <i class="fal fa-phone-alt"></i>
+                                    </div>
+                                    <div class="contact__info-content">
+                                        <h6>Number Phone:</h6>
+                                        <span>@item.CompanyPhone  @item.CompanyPhone2</span>
+                                    </div>
+                                </li>
+                            </ul>
+
+                            <div class="contact__social">
+                                @*        <ul>
+                        <li><a href="#"><i class="fab fa-dribbble"></i></a></li>
+                        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fab fa-behance"></i></a></li>
+                        <li><a href="#"><i class="fas fa-share-alt"></i></a></li>
+                        </ul>*@
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-6">
+
+
+                        <div class="contact__form">
+
+                            <h3>Bize İlet.</h3>
+                            <form method="post" asp-action="Index" asp-controller="Contact">
+                                <div class="row">
+                                    <div class="col-xl-6 col-lg-6">
+                                        <div class="contact__input">
+                                            <label>İsim <span class="required">*</span></label>
+                                            <input type="text" name="CustomerName">
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-6 col-lg-6">
+                                        <div class="contact__input">
+                                            <label>Mail <span class="required">*</span></label>
+                                            <input type="email" name="CustomerMail">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xl-12">
+                                        <div class="contact__input">
+                                            <label>Konu <span class="required">*</span></label>
+                                            <input type="text" name="Subject">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xl-12">
+                                        <div class="contact__input">
+                                            <label>Mesaj</label>
+                                            <textarea cols="30" rows="10" name="Massage"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xl-12">
+                                        <div class="contact__submit">
+                                            <button type="submit" class="os-btn os-btn-black">Gönder</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+                   }
+               }
+
+            </section>
+            <!-- contact area end -->
+
+            <!-- contact map area start -->
+            <section class="contact__map">
+                <div class="container-fluid p-0">
+                    <div class="row no-gutters">
+                        <div class="col-xl-12">
+                            <div class="contact__map-wrapper p-relative">
+<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12032.296232624549!2d28.8195576!3d41.0673738!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xee2d07dcc39062fe!2zw4dlbGViaSBIxLFyZGF2YXQgVGljLkx0ZC7FnnRpLg!5e0!3m2!1str!2str!4v1664545414573!5m2!1str!2str" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+

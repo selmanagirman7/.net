@@ -1,0 +1,57 @@
+﻿@model List<Entity.Category>
+
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="main-container">
+		<div class="pd-ltr-20">
+		
+		
+			
+			<div class="card-box mb-30">
+				<h2 class="h4 pd-20"></h2>
+				<table class="data-table table nowrap">
+					<thead>
+						<tr>
+							<th class="table-plus datatable-nosort">Kategori Id</th>
+						
+							<th class="datatable-nosort">İsim</th>
+						</tr>
+					</thead>
+					<tbody>
+						@foreach (var item in Model)
+					   {
+						   	<tr>
+							
+							<td>
+								<h5 class="font-16">@item.CategoryId</h5>
+							</td>
+							<td>
+								<h5 class="font-16">@item.CategoryName</h5>
+							</td>
+
+
+							<td>
+								<div class="dropdown">
+									<a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle" href="#" role="button" data-toggle="dropdown">
+										<i class="dw dw-more"></i>
+									</a>
+									<div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
+										<a class="dropdown-item" href="/Category/Edit/@item.CategoryId"><i class="dw dw-edit2"></i> Düzenle</a>
+										<a class="dropdown-item" href="/Category/CategoryDelete/@item.CategoryId"><i class="dw dw-delete-3"></i> Sil</a>
+									</div>
+								</div>
+							</td>
+						</tr>
+					   }
+
+					</tbody>
+				</table>
+			</div>
+		
+		</div>
+	</div>
+

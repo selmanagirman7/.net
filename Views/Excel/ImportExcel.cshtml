@@ -1,0 +1,74 @@
+﻿ 
+@{
+    ViewData["Title"] = "ImportExcel";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+
+<br />
+<br />
+<br />
+
+
+<div class="main-container">
+		<div class="pd-ltr-20 xs-pd-20-10">
+			<div class="min-height-200px">
+				<div class="page-header">
+					<div class="row">
+						<div class="col-md-6 col-sm-12">
+							<div class="title">
+								<h4>Excel İmport</h4>
+							</div>
+							
+						</div>
+			
+					</div>
+				</div>
+
+
+
+				<!-- Default Basic Forms Start -->
+				   <div class="row">
+        <div class="col-6 offse3">
+            <form method="post" asp-action="ImportExcel" asp-controller="Excel" enctype="multipart/form-data">
+            <div class=form-group>
+
+                <label>Upload Excel File :</label>
+                <input type="file" name="FormFile" class="form-control"  accept=".csv,.xls,.xlsx" />
+            </div>    
+            
+            <input type="submit" class="btn btn-primary"  value="Upload" />
+            </form>
+        </div>
+    </div>
+
+
+
+
+
+						
+					
+		
+		
+
+	</div>
+@*
+
+<div class="container">
+
+    <div class="row">
+        <div class="col-6 offse3">
+            <form method="post" asp-action="ImportExcel" asp-controller="Excel" enctype="multipart/form-data">
+            <div class=form-group>
+
+                <label>Upload Excel File :</label>
+                <input type="file" name="FormFile" class="form-control"  accept=".csv,.xls,.xlsx" />
+            </div>    
+            
+            <input type="submit" class="btn btn-primary"  value="Upload" />
+            </form>
+        </div>
+    </div>
+</div>
+*@

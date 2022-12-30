@@ -1,0 +1,18 @@
+﻿@model List<Entity.Category>
+
+<ul class="submenu">
+
+
+			<li><a href="/Product/AllDelete">Tüm Ürünleri Sil</a></li>
+	
+
+	@foreach (var item in Model)
+   {
+		<li>@Html.ActionLink(item.CategoryName,"DeleteList",new{id=item.CategoryId},new{@class="",onclick="return confirm('Kategoriye Ait Ürünleri Silmek İstediğinize Eminmisiniz?')"}) </li>
+ 
+	
+		
+	}
+
+</ul>
+

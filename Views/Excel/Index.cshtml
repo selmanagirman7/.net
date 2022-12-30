@@ -1,0 +1,12 @@
+﻿@model IEnumerable<Entity.Vega>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+@foreach (var item in Model)
+{
+    <h1>@item.Name</h1>
+}

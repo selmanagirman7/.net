@@ -1,0 +1,10 @@
+﻿@model List<Entity.Category>
+
+<ul id="sub-menu-active" class="metismenu">
+    @foreach (var item in Model)
+   {
+        <li  >
+            <a href="/Product/GetCategory/@item.CategoryId">@item.CategoryName</a>
+        </li>
+    }
+</ul>

@@ -1,0 +1,83 @@
+﻿@using X.PagedList;
+@using X.PagedList.Mvc;
+@using X.PagedList.Mvc.Core
+@using X.PagedList.Web.Common
+
+@model IPagedList<Entity.Vega>
+@{
+    ViewData["Title"] = "AdminList";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<div class="main-container">
+		<div class="pd-ltr-20">
+		<form asp-action="Search" asp-controller="Product" method="get">
+			<div class="sdiv">
+				<div class="input-group">
+					<input type="text" value="@ViewData["GetProducts"]" name="Search" id="arama" class="clw form-control" placeholder="Aradığınız ürün, kategori veya markayı yazınız ?">
+					<span class="input-group-btn sbtnd"><button class="btn btn-default" type="submit"><i class="fa fa-search"></i></button></span>
+				</div>
+			</div>
+		</form>
+
+
+		<div class="card-box mb-30">
+				<h2 class="h4 pd-20"></h2>
+				<table class="data-table table nowrap">
+					<thead>
+						<tr>
+							<th class="table-plus datatable-nosort"></th>
+							<th></th>
+							<th></th>
+							<th></th>
+							<th></th>
+							<th></th>
+							<th class="datatable-nosort">Action</th>
+						</tr>
+					</thead>
+					<tbody>
+						@foreach (var item in Model)
+					   {
+						   	<tr>
+						
+							<td class="table-plus sorting_1" tabindex="0">
+								<img src="~/urunler/@item.ImageUrl" width="70" height="70" alt="">
+							</td>
+							<td>
+								<h5 class="font-16">@item.Name</h5>
+							
+							</td>
+							
+
+							<td>
+								<div class="dropdown">
+									<a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle" href="#" role="button" data-toggle="dropdown">
+										<i class="dw dw-more"></i>
+									</a>
+									<div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
+										<a class="dropdown-item" href="/Product/Edit/@item.Id"><i class="dw dw-edit2"></i> Edit</a>
+										<a class="dropdown-item" href="/Product/ProductDelete/@item.Id"><i class="dw dw-delete-3"></i> Delete</a>
+							
+									</div>
+								</div>
+							</td>
+						</tr>
+					   }
+					
+		
+					</tbody>
+				</table>
+	
+			</div>
+
+		@Html.PagedListPager((IPagedList)Model, syf =>
+		Url.Action("AdminList", new { syf = syf }),
+		new PagedListRenderOptions {
+		LiElementClasses = new string[] { "page-item" },
+		PageClasses = new string[] { "page-link" }
+		})
+
+		<br />
+		<br />
+		<br />
+		</div>
+	</div>
