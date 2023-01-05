@@ -29,7 +29,7 @@ namespace DataAccess
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Server=193.53.87.166;Database=CelebiDb; user id = sa; password=CRy5RcSGe526aS; Trusted_Connection=false");
+            optionsBuilder.UseSqlServer(@"Server=;Database=; user id = sa; password=; Trusted_Connection=false");
             //optionsBuilder.UseSqlServer(@"Server=(localdb)\MSSQLLocalDB;Database=CelebiDb;  Trusted_Connection=true");
         }
     }
